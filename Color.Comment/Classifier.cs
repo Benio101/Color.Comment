@@ -320,11 +320,11 @@ namespace Color.Comment
 					)), Comment_Slashes
 				));
 
+				string CommentText = Match.Groups["Comment"].Value;
+				int CommentStart = Span.Start + Offset + Match.Groups["Comment"].Index;
+
 				if (IsTripleSlash)
 				{
-					string CommentText = Match.Groups["Comment"].Value;
-					int CommentStart = Span.Start + Offset + Match.Groups["Comment"].Index;
-
 					#region Headers
 
 					foreach (string Header in Meta.Headers){
@@ -495,112 +495,112 @@ namespace Color.Comment
 					goto FinishClassification;
 
 					#endregion
-
-					var InlineCodePositions = new List<(int Min, int Max)>{};
-
-					#region InlineCode
-
-					foreach (Match CommentMatch in new Regex(
-							@"(?<Mark_Open>`)"
-						+	@"(?<Code>[^`]*)"
-						+	@"(?<Mark_Close>`)"
-					).Matches(CommentText))
-					{
-						if (CommentMatch.Groups["Mark_Open"].Length > 0)
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + CommentMatch.Groups["Mark_Open"].Index,
-								CommentMatch.Groups["Mark_Open"].Length
-							)
-						), Comment_Triple_InlineCode_Mark));
-
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + CommentMatch.Groups["Code"].Index,
-								CommentMatch.Groups["Code"].Length
-							)
-						), Comment_Triple_InlineCode_Text));
-
-						if (CommentMatch.Groups["Mark_Close"].Length > 0)
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + CommentMatch.Groups["Mark_Close"].Index,
-								CommentMatch.Groups["Mark_Close"].Length
-							)
-						), Comment_Triple_InlineCode_Mark));
-
-						InlineCodePositions.Add((
-							CommentMatch.Groups["Code"].Index,
-							CommentMatch.Groups["Mark_Close"].Index
-						));
-					}
-
-					#endregion
-					#region ParamRef
-
-					foreach (Match CommentMatch in new Regex(
-							@"(?<Mark>\$)"
-						+	@"(?<Param>" + Utils.Identifier + @")"
-					).Matches(CommentText))
-					{
-						var MarkIndex = CommentMatch.Groups["Mark"].Index;
-						foreach (var (Min, Max) in InlineCodePositions){
-							if (MarkIndex >= Min && MarkIndex <= Max){
-								goto SkipParamRef;
-							}
-						}
-
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + MarkIndex,
-								CommentMatch.Groups["Mark"].Length
-							)
-						), Comment_Triple_ParamRef_Mark));
-
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + CommentMatch.Groups["Param"].Index,
-								CommentMatch.Groups["Param"].Length
-							)
-						), Comment_Triple_ParamRef_Param));
-
-						SkipParamRef:;
-					}
-
-					#endregion
-					#region TParamRef
-
-					foreach (Match CommentMatch in new Regex(
-							@"(?<Mark>\^)"
-						+	@"(?<TParam>" + Utils.Identifier + @")"
-					).Matches(CommentText))
-					{
-						var MarkIndex = CommentMatch.Groups["Mark"].Index;
-						foreach (var (Min, Max) in InlineCodePositions){
-							if (MarkIndex >= Min && MarkIndex <= Max){
-								goto SkipParamTRef;
-							}
-						}
-
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + MarkIndex,
-								CommentMatch.Groups["Mark"].Length
-							)
-						), Comment_Triple_TParamRef_Mark));
-
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + CommentMatch.Groups["TParam"].Index,
-								CommentMatch.Groups["TParam"].Length
-							)
-						), Comment_Triple_TParamRef_TParam));
-
-						SkipParamTRef:;
-					}
-
-					#endregion
 				}
+
+				var InlineCodePositions = new List<(int Min, int Max)>{};
+
+				#region InlineCode
+
+				foreach (Match CommentMatch in new Regex(
+						@"(?<Mark_Open>`)"
+					+	@"(?<Code>[^`]*)"
+					+	@"(?<Mark_Close>`)"
+				).Matches(CommentText))
+				{
+					if (CommentMatch.Groups["Mark_Open"].Length > 0)
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + CommentMatch.Groups["Mark_Open"].Index,
+							CommentMatch.Groups["Mark_Open"].Length
+						)
+					), Comment_Triple_InlineCode_Mark));
+
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + CommentMatch.Groups["Code"].Index,
+							CommentMatch.Groups["Code"].Length
+						)
+					), Comment_Triple_InlineCode_Text));
+
+					if (CommentMatch.Groups["Mark_Close"].Length > 0)
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + CommentMatch.Groups["Mark_Close"].Index,
+							CommentMatch.Groups["Mark_Close"].Length
+						)
+					), Comment_Triple_InlineCode_Mark));
+
+					InlineCodePositions.Add((
+						CommentMatch.Groups["Code"].Index,
+						CommentMatch.Groups["Mark_Close"].Index
+					));
+				}
+
+				#endregion
+				#region ParamRef
+
+				foreach (Match CommentMatch in new Regex(
+						@"(?<Mark>\$)"
+					+	@"(?<Param>" + Utils.Identifier + @")"
+				).Matches(CommentText))
+				{
+					var MarkIndex = CommentMatch.Groups["Mark"].Index;
+					foreach (var (Min, Max) in InlineCodePositions){
+						if (MarkIndex >= Min && MarkIndex <= Max){
+							goto SkipParamRef;
+						}
+					}
+
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + MarkIndex,
+							CommentMatch.Groups["Mark"].Length
+						)
+					), Comment_Triple_ParamRef_Mark));
+
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + CommentMatch.Groups["Param"].Index,
+							CommentMatch.Groups["Param"].Length
+						)
+					), Comment_Triple_ParamRef_Param));
+
+					SkipParamRef:;
+				}
+
+				#endregion
+				#region TParamRef
+
+				foreach (Match CommentMatch in new Regex(
+						@"(?<Mark>\^)"
+					+	@"(?<TParam>" + Utils.Identifier + @")"
+				).Matches(CommentText))
+				{
+					var MarkIndex = CommentMatch.Groups["Mark"].Index;
+					foreach (var (Min, Max) in InlineCodePositions){
+						if (MarkIndex >= Min && MarkIndex <= Max){
+							goto SkipParamTRef;
+						}
+					}
+
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + MarkIndex,
+							CommentMatch.Groups["Mark"].Length
+						)
+					), Comment_Triple_TParamRef_Mark));
+
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + CommentMatch.Groups["TParam"].Index,
+							CommentMatch.Groups["TParam"].Length
+						)
+					), Comment_Triple_TParamRef_TParam));
+
+					SkipParamTRef:;
+				}
+
+				#endregion
 
 				FinishClassification:
 				CurrentOffset = Match.Index + Match.Length;
