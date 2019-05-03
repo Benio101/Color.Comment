@@ -3,3 +3,5 @@ image:
 
 before_build:
 - nuget restore Color.Comment.sln
+
+version: '{build}'
