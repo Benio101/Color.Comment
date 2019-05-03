@@ -77,31 +77,31 @@ namespace Color.Comment
 		: DialogPage
 	{
 		[Category("Color.Comment")]
-		[DisplayName("Color parameter references")]
+		[DisplayName("​​​​​Color parameter references")]
 		[Description("Color parameter references in comments (prefixed by `$`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
 		public Option_ReferenceType ColorParamRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
-		[DisplayName("Color template parameter references")]
+		[DisplayName("​​​​Color template parameter references")]
 		[Description("Color template parameter references in comments (prefixed by `^`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
 		public Option_ReferenceType ColorTParamRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
-		[DisplayName("Color member references")]
+		[DisplayName("​​​Color member references")]
 		[Description("Color non static member references in comments (prefixed by `.`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
 		public Option_ReferenceType ColorMember { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
-		[DisplayName("Color static references")]
+		[DisplayName("​​Color static references")]
 		[Description("Color static references in comments (prefixed by `!`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
 		public Option_ReferenceType ColorStatic { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
-		[DisplayName("Color local references")]
+		[DisplayName("​Color local references")]
 		[Description("Color local references in comments (prefixed by `@`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
 		public Option_ReferenceType ColorLocal { get; set; } = Option_ReferenceType.All;
