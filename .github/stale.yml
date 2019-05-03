@@ -1,0 +1,51 @@
+# Probot: Stale
+# > A GitHub App built with Probot that closes abandoned 
+# > Issues and Pull Requests after a period of inactivity.
+# - https://github.com/probot/stale
+# - https://probot.github.io/apps/stale/
+
+pulls:
+
+  daysUntilStale: 21
+  daysUntilClose: 7
+  exemptProjects: true
+  exemptMilestones: true
+  staleLabel: "Status: Outdated"
+  exemptLabels:
+    - "Status: Accepted"
+    - "Status: In Progress"
+    - "Status: New"
+    - "Status: On Hold"
+    - "Status: Reproduced"
+    - "Status: Under Review"
+
+   markComment: >
+     Due to inactivity for 3 weeks, this pull request has been marked "Outdated".
+     If this pull request will remain inactive for next week, it shall be closed.
+     Updates to this pull request shall remove "Outdated" status and reset timer.
+
+   markComment: >
+     Due to inactivity for 4 weeks, this pull request has been closed.
+
+issues:
+
+  daysUntilStale: 21
+  daysUntilClose: 7
+  exemptProjects: true
+  exemptMilestones: true
+  staleLabel: "Status: Outdated"
+  exemptLabels:
+    - "Status: Accepted"
+    - "Status: In Progress"
+    - "Status: New"
+    - "Status: On Hold"
+    - "Status: Reproduced"
+    - "Status: Under Review"
+
+   markComment: >
+     Due to inactivity for 3 weeks, this issue has been marked "Outdated".
+     If this issue will remain inactive for next week, it shall be closed.
+     Updates to this issue shall remove "Outdated" status and reset timer.
+
+   markComment: >
+     Due to inactivity for 4 weeks, this issue has been closed.

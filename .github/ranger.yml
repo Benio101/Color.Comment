@@ -1,0 +1,49 @@
+# Repo Ranger
+# > A GitHub bot that eases the burden of repository maintenance
+# https://reporanger.com
+
+labels:
+
+  "Status: Accepted":
+    action: merge
+    
+  "Status: Cannot Reproduce":
+    action: close
+    comment: >
+      Reproduction steps of the issue were repeated, but no described behavior was reproduced.
+      This means that either you've provided not enough information, or issue depends on some
+      random or hard to determine conditions. In either case, feel free to reopen this issue
+      if you can add additional information about how to reliable reproduce reported issue.
+
+  "Status: Duplicate":
+    action: close
+    comment: >
+      Similiar issue or pull request was raised already.
+      This duplicate has been closed automatically.
+
+  "Status: Merged":
+    action: close
+
+  "Status: Rejected":
+    action: close
+
+  "Status: Resolved":
+    action: close
+
+  "Status: Won't Fix":
+    action: close
+    comment: >
+      Issue has been reproduced or idea accepted, but it most likely won't be fixed anytime soon.
+
+  "Status: Works As Expected":
+    action: close
+    comment: >
+      Issue is a feauture, not a bug. Works As Expected and won't be changed anytime soon.
+
+  "Type: Invalid":
+    action: close
+    comment: >
+      This topic is invalid. It's neither a valid issue report, idea, pull request nor question.
+
+merges:
+  - action: delete_branch

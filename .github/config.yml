@@ -1,0 +1,11 @@
+# helPR
+# > A GitHub App built with Probot that assigns labels to issues
+# > based on the status of the PR associated with it.
+# - https://github.com/rsarky/helpr
+# - https://probot.github.io/apps/helpr/
+
+helpr:
+
+  opened: "Status: New"
+  merged: "Status: Merged"
+  rejected: "Status: Rejected"

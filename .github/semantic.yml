@@ -1,0 +1,18 @@
+# Semantic Pull Requests
+# > GitHub status check that ensures your pull requests follow the Conventional Commits spec
+# - https://github.com/probot/semantic-pull-requests
+# - https://probot.github.io/apps/semantic-pull-requests/
+
+titleAndCommits: true
+scopes:
+  - feat
+  - fix
+  - perf
+  - refactor
+  - style
+  - docs
+  - test
+  - build
+  - ci
+  - chore
+  - revert

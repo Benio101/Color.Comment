@@ -1,0 +1,40 @@
+# Release Drafter
+# > Drafts your next release notes as pull requests are merged into master. Built with Probot.
+# - https://github.com/toolmantim/release-drafter
+# - https://probot.github.io/apps/release-drafter/
+
+template: |
+  ## Changes
+
+  $CHANGES
+
+name-template: "$NEXT_PATCH_VERSION"
+tag-template: "$NEXT_PATCH_VERSION"
+version-template: "$MAJOR.$MINOR.$PATCH"
+change-template: "- #$NUMBER $TITLE @$AUTHOR"
+no-changes-template: "- No changes"
+categories:
+  - title: "New Features"
+    label: "feat"
+  - title: "Bug Fixes"
+    label: "fix"
+  - title: "Performance Improvements"
+    label: "perf"
+  - title: "Code Refactoring"
+    label: "refactor"
+  - title: "Styles"
+    label: "style"
+  - title: "Documentation"
+    label: "docs"
+  - title: "Tests"
+    label: "test"
+  - title: "Builds"
+    label: "build"
+  - title: "Continuous Integrations"
+    label: "ci"
+  - title: "Chores"
+    label: "chore"
+  - title: "Reverts"
+    label: "revert"
+
+sort-direction: ascending

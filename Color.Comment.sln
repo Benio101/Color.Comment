@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Color.Comment", "Color.Comment\Color.Comment.csproj", "{00000043-6F6C-6F72-2E43-6F6D6D2E6373}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00000043-6F6C-6F72-2E43-6F6D6D2E6373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00000043-6F6C-6F72-2E43-6F6D6D2E6373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00000043-6F6C-6F72-2E43-6F6D6D2E6373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00000043-6F6C-6F72-2E43-6F6D6D2E6373}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0000436f-6c6f-722e-436f-6d6d2e736c6e}
+	EndGlobalSection
+EndGlobal

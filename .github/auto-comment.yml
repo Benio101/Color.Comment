@@ -1,0 +1,7 @@
+# Auto-comment
+# > Comments on new issues and pull requests based on your configuration.
+# - https://github.com/boyney123/auto-comment
+# - https://probot.github.io/apps/auto-comment/
+
+issueOpened: false
+pullRequestOpened: false

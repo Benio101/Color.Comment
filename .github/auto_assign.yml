@@ -1,0 +1,11 @@
+# Auto Assign
+# > A Probot app that adds reviewers to pull requests when pull requests are opened.
+# - https://github.com/kentaro-m/auto-assign
+# - https://probot.github.io/apps/auto-assign/
+
+addReviewers: true
+addAssignees: true
+reviewers:
+  - Benio101
+
+numberOfReviewers: 0

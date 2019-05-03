@@ -1,0 +1,13 @@
+# Lock Threads
+# > Locks closed issues and pull requests after a period of inactivity.
+# - https://github.com/dessant/lock-threads
+# - https://probot.github.io/apps/lock/
+
+daysUntilLock: 364
+skipCreatedBefore: false
+exemptLabels: []
+lockLabel: false
+lockComment: >
+  Due to inactivity for 52 weeks, this closed thread has been locked.
+
+setLockReason: true
