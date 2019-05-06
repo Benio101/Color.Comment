@@ -6,19 +6,19 @@
 	{
 		internal static class Colors
 		{
+			private  static readonly Color White         = Color.FromRgb(224, 224, 224);
+			private  static readonly Color WhiteDark     = Color.FromRgb(176, 176, 176);
 			private  static readonly Color Gray          = Color.FromRgb(128, 128, 128);
 			private  static readonly Color GrayDark      = Color.FromRgb( 80,  80,  80);
-			private  static readonly Color WhiteDark     = Color.FromRgb(176, 176, 176);
-
-			private  static readonly Color Blue          = Color.FromRgb(128, 176, 224);
-			private  static readonly Color BlueDark      = Color.FromRgb( 96, 128, 224);
-			private  static readonly Color Green         = Color.FromRgb(176, 224, 128);
-			private  static readonly Color Red           = Color.FromRgb(224, 128, 128);
 			private  static readonly Color Yellow        = Color.FromRgb(224, 224, 128);
+			private  static readonly Color Orange        = Color.FromRgb(224, 176, 128);
+			private  static readonly Color Red           = Color.FromRgb(224, 128, 128);
 			private  static readonly Color RedDark       = Color.FromRgb(224,  96,  96);
+			private  static readonly Color Green         = Color.FromRgb(176, 224, 128);
 			private  static readonly Color GreenDark     = Color.FromRgb(128, 176,  96);
 			private  static readonly Color GreenVeryDark = Color.FromRgb( 80,  96,  64);
-			private  static readonly Color Orange        = Color.FromRgb(224, 176, 128);
+			private  static readonly Color Blue          = Color.FromRgb(128, 176, 224);
+			private  static readonly Color BlueDark      = Color.FromRgb( 96, 128, 224);
 			private  static readonly Color Pink          = Color.FromRgb(224, 128, 224);
 			private  static readonly Color Purple        = Color.FromRgb(176, 128, 224);
 
@@ -38,6 +38,10 @@
 			internal static readonly Color Throw         = Red;
 			internal static readonly Color Param         = Orange;
 			internal static readonly Color TParam        = Purple;
+			internal static readonly Color Member        = Yellow;
+			internal static readonly Color Static        = Red;
+			internal static readonly Color Local         = White;
+			internal static readonly Color Macro         = Purple;
 		}
 	}
 }

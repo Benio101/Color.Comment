@@ -24,6 +24,84 @@ namespace Color.Comment
 		private static readonly ClassificationTypeDefinition
 		Definition_Comment_Default_Slashes;
 
+		#region ParamRef
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.ParamRef.Mark")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_ParamRef_Mark;
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.ParamRef.Param")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_ParamRef_Param;
+
+		#endregion
+		#region TParamRef
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.TParamRef.Mark")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_TParamRef_Mark;
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.TParamRef.TParam")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_TParamRef_TParam;
+
+		#endregion
+		#region MemberRef
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.MemberRef.Mark")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_MemberRef_Mark;
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.MemberRef.Member")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_MemberRef_Member;
+
+		#endregion
+		#region StaticRef
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.StaticRef.Mark")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_StaticRef_Mark;
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.StaticRef.Static")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_StaticRef_Static;
+
+		#endregion
+		#region LocalRef
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.LocalRef.Mark")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_LocalRef_Mark;
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.LocalRef.Local")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_LocalRef_Local;
+
+		#endregion
+		#region MacroRef
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.MacroRef.Mark")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_MacroRef_Mark;
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.MacroRef.Macro")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_MacroRef_Macro;
+
+		#endregion
 		#endregion
 		#region Triple
 
@@ -211,32 +289,6 @@ namespace Color.Comment
 		[Name("Comment.Triple.Code.Text")]
 		private static readonly ClassificationTypeDefinition
 		Definition_Comment_Triple_Code_Text;
-
-		#endregion
-		#region Triple.ParamRef
-
-		[Export(typeof(ClassificationTypeDefinition))]
-		[Name("Comment.Triple.ParamRef.Mark")]
-		private static readonly ClassificationTypeDefinition
-		Definition_Comment_Triple_ParamRef_Mark;
-
-		[Export(typeof(ClassificationTypeDefinition))]
-		[Name("Comment.Triple.ParamRef.Param")]
-		private static readonly ClassificationTypeDefinition
-		Definition_Comment_Triple_ParamRef_Param;
-
-		#endregion
-		#region Triple.TParamRef
-
-		[Export(typeof(ClassificationTypeDefinition))]
-		[Name("Comment.Triple.TParamRef.Mark")]
-		private static readonly ClassificationTypeDefinition
-		Definition_Comment_Triple_TParamRef_Mark;
-
-		[Export(typeof(ClassificationTypeDefinition))]
-		[Name("Comment.Triple.TParamRef.TParam")]
-		private static readonly ClassificationTypeDefinition
-		Definition_Comment_Triple_TParamRef_TParam;
 
 		#endregion
 		#region Triple.InlineCode

@@ -92,25 +92,25 @@ namespace Color.Comment
 		[DisplayName("​​​Color member references")]
 		[Description("Color non static member references in comments (prefixed by `.`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorMember { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorMemberRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("​​Color static references")]
 		[Description("Color static references in comments (prefixed by `!`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorStatic { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorStaticRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("​Color local references")]
 		[Description("Color local references in comments (prefixed by `@`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorLocal { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorLocalRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("Color macro references")]
 		[Description("Color macro references in comments (prefixed by `%`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorMacro { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorMacroRef { get; set; } = Option_ReferenceType.All;
 	}
 
 	internal static class Options
@@ -143,7 +143,7 @@ namespace Color.Comment
 			}
 		}
 
-		internal static Option_ReferenceType ColorMember
+		internal static Option_ReferenceType ColorMemberRef
 		{
 			get
 			{
@@ -153,11 +153,11 @@ namespace Color.Comment
 				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
 				if (Page == null) return Option_ReferenceType.No;
 
-				return Page.ColorMember;
+				return Page.ColorMemberRef;
 			}
 		}
 
-		internal static Option_ReferenceType ColorStatic
+		internal static Option_ReferenceType ColorStaticRef
 		{
 			get
 			{
@@ -167,11 +167,11 @@ namespace Color.Comment
 				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
 				if (Page == null) return Option_ReferenceType.No;
 
-				return Page.ColorStatic;
+				return Page.ColorStaticRef;
 			}
 		}
 
-		internal static Option_ReferenceType ColorLocal
+		internal static Option_ReferenceType ColorLocalRef
 		{
 			get
 			{
@@ -181,11 +181,11 @@ namespace Color.Comment
 				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
 				if (Page == null) return Option_ReferenceType.No;
 
-				return Page.ColorLocal;
+				return Page.ColorLocalRef;
 			}
 		}
 
-		internal static Option_ReferenceType ColorMacro
+		internal static Option_ReferenceType ColorMacroRef
 		{
 			get
 			{
@@ -195,7 +195,7 @@ namespace Color.Comment
 				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
 				if (Page == null) return Option_ReferenceType.No;
 
-				return Page.ColorMacro;
+				return Page.ColorMacroRef;
 			}
 		}
 	}

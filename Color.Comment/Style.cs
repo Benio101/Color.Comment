@@ -45,6 +45,372 @@ namespace Color.Comment
 		}
 	}
 
+	#region ParamRef
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.ParamRef.Mark")]
+	[Name("Comment.ParamRef.Mark")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_ParamRef_Mark
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_ParamRef_Mark(){
+			DisplayName = "C++ Comment: Reference: Parameter: \"$\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.CommentPunct;
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.ParamRef.Param")]
+	[Name("Comment.ParamRef.Param")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_ParamRef_Param
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_ParamRef_Param(){
+			DisplayName = "C++ Comment: Reference: Parameter";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.Param;
+		}
+	}
+
+	#endregion
+	#region TParamRef
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.TParamRef.Mark")]
+	[Name("Comment.TParamRef.Mark")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_TParamRef_Mark
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_TParamRef_Mark(){
+			DisplayName = "C++ Comment: Reference: Template Parameter: \"^\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.CommentPunct;
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.TParamRef.TParam")]
+	[Name("Comment.TParamRef.TParam")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_TParamRef_TParam
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_TParamRef_TParam(){
+			DisplayName = "C++ Comment: Reference: Template Parameter";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.TParam;
+		}
+	}
+
+	#endregion
+	#region MemberRef
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.MemberRef.Mark")]
+	[Name("Comment.MemberRef.Mark")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_MemberRef_Mark
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_MemberRef_Mark(){
+			DisplayName = "C++ Comment: Reference: Member: \".\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.CommentPunct;
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.MemberRef.Member")]
+	[Name("Comment.MemberRef.Member")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_MemberRef_Member
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_MemberRef_Member(){
+			DisplayName = "C++ Comment: Reference: Member";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.Member;
+		}
+	}
+
+	#endregion
+	#region StaticRef
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.StaticRef.Mark")]
+	[Name("Comment.StaticRef.Mark")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_StaticRef_Mark
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_StaticRef_Mark(){
+			DisplayName = "C++ Comment: Reference: Static: \"!\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.CommentPunct;
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.StaticRef.Static")]
+	[Name("Comment.StaticRef.Static")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_StaticRef_Static
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_StaticRef_Static(){
+			DisplayName = "C++ Comment: Reference: Static";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.Static;
+		}
+	}
+
+	#endregion
+	#region LocalRef
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.LocalRef.Mark")]
+	[Name("Comment.LocalRef.Mark")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_LocalRef_Mark
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_LocalRef_Mark(){
+			DisplayName = "C++ Comment: Reference: Local: \"@\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.CommentPunct;
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.LocalRef.Local")]
+	[Name("Comment.LocalRef.Local")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_LocalRef_Local
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_LocalRef_Local(){
+			DisplayName = "C++ Comment: Reference: Local";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.Local;
+		}
+	}
+
+	#endregion
+	#region MacroRef
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.MacroRef.Mark")]
+	[Name("Comment.MacroRef.Mark")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_MacroRef_Mark
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_MacroRef_Mark(){
+			DisplayName = "C++ Comment: Reference: Macro: \"%\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.CommentPunct;
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.MacroRef.Macro")]
+	[Name("Comment.MacroRef.Macro")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_MacroRef_Macro
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_MacroRef_Macro(){
+			DisplayName = "C++ Comment: Reference: Macro";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.Macro;
+		}
+	}
+
+	#endregion
 	#endregion
 	#region Triple
 
@@ -649,128 +1015,6 @@ namespace Color.Comment
 
 			BackgroundCustomizable = false;
 			ForegroundColor = Default.Colors.Comment;
-		}
-	}
-
-	#endregion
-	#region Triple.ParamRef
-
-	[Export(typeof(EditorFormatDefinition))]
-	[ClassificationType(ClassificationTypeNames = "Comment.Triple.ParamRef.Mark")]
-	[Name("Comment.Triple.ParamRef.Mark")]
-	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
-	[UserVisible(true)]
-	[Order(After = PredefinedClassificationTypeNames.Comment)]
-	[Order(After = "XML Doc Comment")]
-	[Order(After = "Comment.Triple")]
-	[Order(After = "Comment.Triple.Effect.Desc")]
-	[Order(After = "Comment.Triple.Note.Desc")]
-	[Order(After = "Comment.Triple.Todo.Desc")]
-	[Order(After = "Comment.Triple.See.Desc")]
-	[Order(After = "Comment.Triple.Bug.Desc")]
-	[Order(After = "Comment.Triple.Return.Desc")]
-	[Order(After = "Comment.Triple.Spare.Desc")]
-	[Order(After = "Comment.Triple.Throw.Desc")]
-	[Order(After = "Comment.Triple.Param.Desc")]
-	[Order(After = "Comment.Triple.TParam.Desc")]
-	internal sealed class Format_Comment_ParamRef_Mark
-		: ClassificationFormatDefinition
-	{
-		public Format_Comment_ParamRef_Mark(){
-			DisplayName = "C++ Documentation: Reference: Parameter: \"$\"";
-
-			BackgroundCustomizable = false;
-			ForegroundColor = Default.Colors.CommentPunct;
-		}
-	}
-
-	[Export(typeof(EditorFormatDefinition))]
-	[ClassificationType(ClassificationTypeNames = "Comment.Triple.ParamRef.Param")]
-	[Name("Comment.Triple.ParamRef.Param")]
-	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
-	[UserVisible(true)]
-	[Order(After = PredefinedClassificationTypeNames.Comment)]
-	[Order(After = "XML Doc Comment")]
-	[Order(After = "Comment.Triple")]
-	[Order(After = "Comment.Triple.Effect.Desc")]
-	[Order(After = "Comment.Triple.Note.Desc")]
-	[Order(After = "Comment.Triple.Todo.Desc")]
-	[Order(After = "Comment.Triple.See.Desc")]
-	[Order(After = "Comment.Triple.Bug.Desc")]
-	[Order(After = "Comment.Triple.Return.Desc")]
-	[Order(After = "Comment.Triple.Spare.Desc")]
-	[Order(After = "Comment.Triple.Throw.Desc")]
-	[Order(After = "Comment.Triple.Param.Desc")]
-	[Order(After = "Comment.Triple.TParam.Desc")]
-	internal sealed class Format_Comment_ParamRef_Param
-		: ClassificationFormatDefinition
-	{
-		public Format_Comment_ParamRef_Param(){
-			DisplayName = "C++ Documentation: Reference: Parameter";
-
-			BackgroundCustomizable = false;
-			ForegroundColor = Default.Colors.Param;
-		}
-	}
-
-	#endregion
-	#region Triple.TParamRef
-
-	[Export(typeof(EditorFormatDefinition))]
-	[ClassificationType(ClassificationTypeNames = "Comment.Triple.TParamRef.Mark")]
-	[Name("Comment.Triple.TParamRef.Mark")]
-	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
-	[UserVisible(true)]
-	[Order(After = PredefinedClassificationTypeNames.Comment)]
-	[Order(After = "XML Doc Comment")]
-	[Order(After = "Comment.Triple")]
-	[Order(After = "Comment.Triple.Effect.Desc")]
-	[Order(After = "Comment.Triple.Note.Desc")]
-	[Order(After = "Comment.Triple.Todo.Desc")]
-	[Order(After = "Comment.Triple.See.Desc")]
-	[Order(After = "Comment.Triple.Bug.Desc")]
-	[Order(After = "Comment.Triple.Return.Desc")]
-	[Order(After = "Comment.Triple.Spare.Desc")]
-	[Order(After = "Comment.Triple.Throw.Desc")]
-	[Order(After = "Comment.Triple.Param.Desc")]
-	[Order(After = "Comment.Triple.TParam.Desc")]
-	internal sealed class Format_Comment_TParamRef_Mark
-		: ClassificationFormatDefinition
-	{
-		public Format_Comment_TParamRef_Mark(){
-			DisplayName = "C++ Documentation: Reference: Template Parameter: \"^\"";
-
-			BackgroundCustomizable = false;
-			ForegroundColor = Default.Colors.CommentPunct;
-		}
-	}
-
-	[Export(typeof(EditorFormatDefinition))]
-	[ClassificationType(ClassificationTypeNames = "Comment.Triple.TParamRef.TParam")]
-	[Name("Comment.Triple.TParamRef.TParam")]
-	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
-	[UserVisible(true)]
-	[Order(After = PredefinedClassificationTypeNames.Comment)]
-	[Order(After = "XML Doc Comment")]
-	[Order(After = "Comment.Triple")]
-	[Order(After = "Comment.Triple.Effect.Desc")]
-	[Order(After = "Comment.Triple.Note.Desc")]
-	[Order(After = "Comment.Triple.Todo.Desc")]
-	[Order(After = "Comment.Triple.See.Desc")]
-	[Order(After = "Comment.Triple.Bug.Desc")]
-	[Order(After = "Comment.Triple.Return.Desc")]
-	[Order(After = "Comment.Triple.Spare.Desc")]
-	[Order(After = "Comment.Triple.Throw.Desc")]
-	[Order(After = "Comment.Triple.Param.Desc")]
-	[Order(After = "Comment.Triple.TParam.Desc")]
-	internal sealed class Format_Comment_TParamRef_TParam
-		: ClassificationFormatDefinition
-	{
-		public Format_Comment_TParamRef_TParam(){
-			DisplayName = "C++ Documentation: Reference: Template Parameter";
-
-			BackgroundCustomizable = false;
-			ForegroundColor = Default.Colors.TParam;
 		}
 	}
 
