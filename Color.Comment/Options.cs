@@ -111,6 +111,24 @@ namespace Color.Comment
 		[Description("Color macro references in comments (prefixed by `%`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
 		public Option_ReferenceType ColorMacroRef { get; set; } = Option_ReferenceType.All;
+
+		[Category("Color.Comment")]
+		[DisplayName("Color line–wide quotes")]
+		[Description("Color quotes in comments (prefixed by `>`).")]
+		[TypeConverter(typeof(Option_ReferenceType_Converter))]
+		public Option_ReferenceType ColorQuote { get; set; } = Option_ReferenceType.Triple;
+
+		[Category("Color.Comment")]
+		[DisplayName("Color line–wide code")]
+		[Description("Color line–wide code in comments (prefixed by `//`).")]
+		[TypeConverter(typeof(Option_ReferenceType_Converter))]
+		public Option_ReferenceType ColorCode { get; set; } = Option_ReferenceType.Triple;
+
+		[Category("Color.Comment")]
+		[DisplayName("Color inline code")]
+		[Description("Color inline code in comments (surrounded by U+0060 ` GRAVE ACCENT symbol).")]
+		[TypeConverter(typeof(Option_ReferenceType_Converter))]
+		public Option_ReferenceType ColorInlineCode { get; set; } = Option_ReferenceType.All;
 	}
 
 	internal static class Options
@@ -196,6 +214,48 @@ namespace Color.Comment
 				if (Page == null) return Option_ReferenceType.No;
 
 				return Page.ColorMacroRef;
+			}
+		}
+
+		internal static Option_ReferenceType ColorQuote
+		{
+			get
+			{
+				var Package = Project.Package;
+				if (Package == null) return Option_ReferenceType.No;
+
+				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
+				if (Page == null) return Option_ReferenceType.No;
+
+				return Page.ColorQuote;
+			}
+		}
+
+		internal static Option_ReferenceType ColorCode
+		{
+			get
+			{
+				var Package = Project.Package;
+				if (Package == null) return Option_ReferenceType.No;
+
+				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
+				if (Page == null) return Option_ReferenceType.No;
+
+				return Page.ColorCode;
+			}
+		}
+
+		internal static Option_ReferenceType ColorInlineCode
+		{
+			get
+			{
+				var Package = Project.Package;
+				if (Package == null) return Option_ReferenceType.No;
+
+				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
+				if (Page == null) return Option_ReferenceType.No;
+
+				return Page.ColorInlineCode;
 			}
 		}
 	}

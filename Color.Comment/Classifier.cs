@@ -467,73 +467,94 @@ namespace Color.Comment
 					}
 
 					#endregion
-
-					bool SkipInlineMatching = false;
-
-					#region Quote
-
-					foreach (Match CommentMatch in new Regex(
-							@"^(?<Mark>>)"
-						+	@"[ \t\v\f]*(?<Desc>[^\n]*)"
-					).Matches(CommentText))
-					{
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + CommentMatch.Groups["Mark"].Index,
-								CommentMatch.Groups["Mark"].Length
-							)
-						), Comment_Triple_Quote_Mark));
-
-						if (CommentMatch.Groups["Desc"].Length > 0)
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + CommentMatch.Groups["Desc"].Index,
-								CommentMatch.Groups["Desc"].Length
-							)
-						), Comment_Triple_Quote_Text));
-
-						SkipInlineMatching = true;
-					}
-
-					if (SkipInlineMatching)
-					goto FinishClassification;
-
-					#endregion
-					#region Code
-
-					foreach (Match CommentMatch in new Regex(
-							@"^(?<Mark>//)"
-						+	@"[ \t\v\f]*(?<Desc>[^\n]*)"
-					).Matches(CommentText))
-					{
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + CommentMatch.Groups["Mark"].Index,
-								CommentMatch.Groups["Mark"].Length
-							)
-						), Comment_Triple_Code_Mark));
-
-						if (CommentMatch.Groups["Desc"].Length > 0)
-						Spans.Add(new ClassificationSpan(new SnapshotSpan(
-							Span.Snapshot, new Span(
-								CommentStart + CommentMatch.Groups["Desc"].Index,
-								CommentMatch.Groups["Desc"].Length
-							)
-						), Comment_Triple_Code_Text));
-
-						SkipInlineMatching = true;
-					}
-
-					if (SkipInlineMatching)
-					goto FinishClassification;
-
-					#endregion
 				}
+
+				bool SkipInlineMatching = false;
+
+				#region Quote
+
+				if(
+						Options.ColorQuote == Option_ReferenceType.All
+					||	(
+								Options.ColorQuote == Option_ReferenceType.Triple
+							&&	IsTripleSlash
+						)
+				)
+				foreach (Match CommentMatch in new Regex(
+						@"^(?<Mark>>)"
+					+	@"[ \t\v\f]*(?<Desc>[^\n]*)"
+				).Matches(CommentText))
+				{
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + CommentMatch.Groups["Mark"].Index,
+							CommentMatch.Groups["Mark"].Length
+						)
+					), Comment_Triple_Quote_Mark));
+
+					if (CommentMatch.Groups["Desc"].Length > 0)
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + CommentMatch.Groups["Desc"].Index,
+							CommentMatch.Groups["Desc"].Length
+						)
+					), Comment_Triple_Quote_Text));
+
+					SkipInlineMatching = true;
+				}
+
+				if (SkipInlineMatching)
+				goto FinishClassification;
+
+				#endregion
+				#region Code
+
+				if(
+						Options.ColorCode == Option_ReferenceType.All
+					||	(
+								Options.ColorCode == Option_ReferenceType.Triple
+							&&	IsTripleSlash
+						)
+				)
+				foreach (Match CommentMatch in new Regex(
+						@"^(?<Mark>//)"
+					+	@"[ \t\v\f]*(?<Desc>[^\n]*)"
+				).Matches(CommentText))
+				{
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + CommentMatch.Groups["Mark"].Index,
+							CommentMatch.Groups["Mark"].Length
+						)
+					), Comment_Triple_Code_Mark));
+
+					if (CommentMatch.Groups["Desc"].Length > 0)
+					Spans.Add(new ClassificationSpan(new SnapshotSpan(
+						Span.Snapshot, new Span(
+							CommentStart + CommentMatch.Groups["Desc"].Index,
+							CommentMatch.Groups["Desc"].Length
+						)
+					), Comment_Triple_Code_Text));
+
+					SkipInlineMatching = true;
+				}
+
+				if (SkipInlineMatching)
+				goto FinishClassification;
+
+				#endregion
 
 				var InlineCodePositions = new List<(int Min, int Max)>{};
 
 				#region InlineCode
 
+				if(
+						Options.ColorInlineCode == Option_ReferenceType.All
+					||	(
+								Options.ColorInlineCode == Option_ReferenceType.Triple
+							&&	IsTripleSlash
+						)
+				)
 				foreach (Match CommentMatch in new Regex(
 						@"(?<Mark_Open>`)"
 					+	@"(?<Code>[^`]*)"
