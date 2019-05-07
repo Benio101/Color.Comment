@@ -7,7 +7,8 @@
 | `master` | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/master?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/master)
 
 ## Description
-Extension adds options to overwrite colors of certain C++ Comments in files of `ContentType` `"C/C++"`, _eg_ `.cpp` or `.h` files.
+Extension adds options to overwrite colors of certain C++ Comments.<br>
+Extension works in files of `ContentType` `"C/C++"`, _eg_ `.cpp` or `.h` files.
 
 ## Usage
 New entries will appear in `Tools` → `Options` → `Environment` → `Fonts and Colors` → `Text Editor`.<br>
@@ -51,8 +52,8 @@ Full list of options:
 | Color inline code                   | `All`: Yes, in all comments                      |
 
 ### Note
-Note that editing options does not take immediate effect to keep performance.
-It requires reclassification, _eg_ triggered by editing corresponding part of code, reopening file or cut and pasting file's content.
+Note that editing options does not take immediate effect to keep performance.<br>
+It requires reclassification, _eg_ triggered by editing corresponding part of code.
 
 ## Customization
 Extension exposes several entries for customization across two kinds of comments to customize:
@@ -111,7 +112,8 @@ void Begin();
 
 ### References
 References are inline mentions of entities (functions, variables _etc._) in comments.<br>
-References consist of a single punctuation character immediatelly followed by an identifier (_eg_ `$Left` references parameter `Left`).
+References consist of a single punctuation character immediatelly followed by an identifier.<br>
+For example: `$Left` references parameter `Left`; `^Floating` references template parameter `Floating`.
 
 #### Options
 Options that enables references are:
@@ -143,7 +145,15 @@ Full list of references:
 | Macro              | `%`      |
 
 ### Headers
-Headers are line–wide documentation commands for tools like Doxygen or standardese, enabled for triple slash `C++ Documentation` comments only. Headers begins with either `@` or `\`, immediatelly followed by a header name: `[\\@]` Header `[ \t\v\f]*` `([:=])?` `.*`, _ie_ `\short Description.`.
+Headers are line–wide documentation commands for tools like Doxygen or Standardese.<br>
+Headers are enabled for triple slash `C++ Documentation` comments only (that begins with `///`).<br>
+Headers begins with either `@` or `\`, immediatelly followed by an identifier.
+
+#### Details
+- Headers format of Parameters and Template Parameters:<br>
+`[\\@]` Identifier `[ \t\v\f]*` Identifier`?` `...?` `[ \t\v\f]*` `([:=])?` `.*`, _ie_ `\param Right Exponent` value.
+- Header format for all the rest:<br>
+`[\\@]` Identifier `[ \t\v\f]*` `([:=])?` `.*`, _ie_ `\short Description.`.
 
 #### Examples
 ```cpp
