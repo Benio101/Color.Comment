@@ -50,6 +50,13 @@ namespace Color.Comment
 		private readonly IClassificationType Comment_MacroRef_Macro;
 		private readonly IClassificationType Comment_MacroRef_Mark;
 
+		private readonly IClassificationType Comment_Quote_Mark;
+		private readonly IClassificationType Comment_Quote_Text;
+		private readonly IClassificationType Comment_Code_Mark;
+		private readonly IClassificationType Comment_Code_Text;
+		private readonly IClassificationType Comment_InlineCode_Mark;
+		private readonly IClassificationType Comment_InlineCode_Text;
+
 		private readonly IClassificationType Comment_Triple;
 		private readonly IClassificationType Comment_Triple_Slashes;
 		private readonly IClassificationType Comment_Triple_Punct;
@@ -61,13 +68,6 @@ namespace Color.Comment
 		private readonly IClassificationType Comment_Triple_TParam_Mark;
 		private readonly IClassificationType Comment_Triple_TParam_Name;
 		private readonly IClassificationType Comment_Triple_TParam_Desc;
-
-		private readonly IClassificationType Comment_​Triple_Quote_Mark;
-		private readonly IClassificationType Comment_Triple_Quote_Text;
-		private readonly IClassificationType Comment_Triple_Code_Mark;
-		private readonly IClassificationType Comment_Triple_Code_Text;
-		private readonly IClassificationType Comment_Triple_InlineCode_Mark;
-		private readonly IClassificationType Comment_Triple_InlineCode_Text;
 
 		// Comment Headers
 		private readonly Dictionary<string, CommentHeader> CommentHeaders =
@@ -123,6 +123,24 @@ namespace Color.Comment
 			Comment_MacroRef_Macro =
 				Registry.GetClassificationType("Comment.MacroRef.Macro");
 
+			Comment_Quote_Mark =
+				Registry.GetClassificationType("Comment.Quote.Mark");
+
+			Comment_Quote_Text =
+				Registry.GetClassificationType("Comment.Quote.Text");
+
+			Comment_Code_Mark =
+				Registry.GetClassificationType("Comment.Code.Mark");
+
+			Comment_Code_Text =
+				Registry.GetClassificationType("Comment.Code.Text");
+
+			Comment_InlineCode_Mark =
+				Registry.GetClassificationType("Comment.InlineCode.Mark");
+
+			Comment_InlineCode_Text =
+				Registry.GetClassificationType("Comment.InlineCode.Text");
+
 			Comment_Triple =
 				Registry.GetClassificationType("Comment.Triple");
 
@@ -152,24 +170,6 @@ namespace Color.Comment
 
 			Comment_Triple_TParam_Desc =
 				Registry.GetClassificationType("Comment.Triple.TParam.Desc");
-
-			Comment_Triple_Quote_Mark =
-				Registry.GetClassificationType("Comment.Triple.Quote.Mark");
-
-			Comment_Triple_Quote_Text =
-				Registry.GetClassificationType("Comment.Triple.Quote.Text");
-
-			Comment_Triple_Code_Mark =
-				Registry.GetClassificationType("Comment.Triple.Code.Mark");
-
-			Comment_Triple_Code_Text =
-				Registry.GetClassificationType("Comment.Triple.Code.Text");
-
-			Comment_Triple_InlineCode_Mark =
-				Registry.GetClassificationType("Comment.Triple.InlineCode.Mark");
-
-			Comment_Triple_InlineCode_Text =
-				Registry.GetClassificationType("Comment.Triple.InlineCode.Text");
 
 			// Comment Headers
 			foreach (string Header in Meta.Headers){
@@ -490,7 +490,7 @@ namespace Color.Comment
 							CommentStart + CommentMatch.Groups["Mark"].Index,
 							CommentMatch.Groups["Mark"].Length
 						)
-					), Comment_Triple_Quote_Mark));
+					), Comment_Quote_Mark));
 
 					if (CommentMatch.Groups["Desc"].Length > 0)
 					Spans.Add(new ClassificationSpan(new SnapshotSpan(
@@ -498,7 +498,7 @@ namespace Color.Comment
 							CommentStart + CommentMatch.Groups["Desc"].Index,
 							CommentMatch.Groups["Desc"].Length
 						)
-					), Comment_Triple_Quote_Text));
+					), Comment_Quote_Text));
 
 					SkipInlineMatching = true;
 				}
@@ -526,7 +526,7 @@ namespace Color.Comment
 							CommentStart + CommentMatch.Groups["Mark"].Index,
 							CommentMatch.Groups["Mark"].Length
 						)
-					), Comment_Triple_Code_Mark));
+					), Comment_Code_Mark));
 
 					if (CommentMatch.Groups["Desc"].Length > 0)
 					Spans.Add(new ClassificationSpan(new SnapshotSpan(
@@ -534,7 +534,7 @@ namespace Color.Comment
 							CommentStart + CommentMatch.Groups["Desc"].Index,
 							CommentMatch.Groups["Desc"].Length
 						)
-					), Comment_Triple_Code_Text));
+					), Comment_Code_Text));
 
 					SkipInlineMatching = true;
 				}
@@ -567,14 +567,14 @@ namespace Color.Comment
 							CommentStart + CommentMatch.Groups["Mark_Open"].Index,
 							CommentMatch.Groups["Mark_Open"].Length
 						)
-					), Comment_Triple_InlineCode_Mark));
+					), Comment_InlineCode_Mark));
 
 					Spans.Add(new ClassificationSpan(new SnapshotSpan(
 						Span.Snapshot, new Span(
 							CommentStart + CommentMatch.Groups["Code"].Index,
 							CommentMatch.Groups["Code"].Length
 						)
-					), Comment_Triple_InlineCode_Text));
+					), Comment_InlineCode_Text));
 
 					if (CommentMatch.Groups["Mark_Close"].Length > 0)
 					Spans.Add(new ClassificationSpan(new SnapshotSpan(
@@ -582,7 +582,7 @@ namespace Color.Comment
 							CommentStart + CommentMatch.Groups["Mark_Close"].Index,
 							CommentMatch.Groups["Mark_Close"].Length
 						)
-					), Comment_Triple_InlineCode_Mark));
+					), Comment_InlineCode_Mark));
 
 					InlineCodePositions.Add((
 						CommentMatch.Groups["Code"].Index,

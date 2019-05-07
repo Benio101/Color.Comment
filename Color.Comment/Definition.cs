@@ -102,6 +102,45 @@ namespace Color.Comment
 		Definition_Comment_MacroRef_Macro;
 
 		#endregion
+		#region Quote
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.Quote.Mark")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_Quote_Mark;
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.Quote.Text")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_Quote_Text;
+
+		#endregion
+		#region Code
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.Code.Mark")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_Code_Mark;
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.Code.Text")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_Code_Text;
+
+		#endregion
+		#region InlineCode
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.InlineCode.Mark")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_InlineCode_Mark;
+
+		[Export(typeof(ClassificationTypeDefinition))]
+		[Name("Comment.InlineCode.Text")]
+		private static readonly ClassificationTypeDefinition
+		Definition_Comment_InlineCode_Text;
+
+		#endregion
 		#endregion
 		#region Triple
 
@@ -263,45 +302,6 @@ namespace Color.Comment
 		[Name("Comment.Triple.TParam.Desc")]
 		private static readonly ClassificationTypeDefinition
 		Definition_Comment_Triple_TParam_Desc;
-
-		#endregion
-		#region Triple.Quote
-
-		[Export(typeof(ClassificationTypeDefinition))]
-		[Name("Comment.Triple.Quote.Mark")]
-		private static readonly ClassificationTypeDefinition
-		Definition_Comment_Triple_Quote_Mark;
-
-		[Export(typeof(ClassificationTypeDefinition))]
-		[Name("Comment.Triple.Quote.Text")]
-		private static readonly ClassificationTypeDefinition
-		Definition_Comment_Triple_Quote_Text;
-
-		#endregion
-		#region Triple.Code
-
-		[Export(typeof(ClassificationTypeDefinition))]
-		[Name("Comment.Triple.Code.Mark")]
-		private static readonly ClassificationTypeDefinition
-		Definition_Comment_Triple_Code_Mark;
-
-		[Export(typeof(ClassificationTypeDefinition))]
-		[Name("Comment.Triple.Code.Text")]
-		private static readonly ClassificationTypeDefinition
-		Definition_Comment_Triple_Code_Text;
-
-		#endregion
-		#region Triple.InlineCode
-
-		[Export(typeof(ClassificationTypeDefinition))]
-		[Name("Comment.Triple.InlineCode.Mark")]
-		private static readonly ClassificationTypeDefinition
-		Definition_Comment_Triple_InlineCode_Mark;
-
-		[Export(typeof(ClassificationTypeDefinition))]
-		[Name("Comment.Triple.InlineCode.Text")]
-		private static readonly ClassificationTypeDefinition
-		Definition_Comment_Triple_InlineCode_Text;
 
 		#endregion
 		#endregion

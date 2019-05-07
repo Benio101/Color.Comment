@@ -411,6 +411,149 @@ namespace Color.Comment
 	}
 
 	#endregion
+	#region Quote
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.Quote.Mark")]
+	[Name("Comment.Quote.Mark")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	internal sealed class Format_Comment_Quote_Mark
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_Quote_Mark(){
+			DisplayName = "C++ Comment: Quote: \">\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.StringDark;
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.Quote.Text")]
+	[Name("Comment.Quote.Text")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	internal sealed class Format_Comment_Quote_Text
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_Quote_Text(){
+			DisplayName = "C++ Comment: Quote";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.String;
+		}
+	}
+
+	#endregion
+	#region Code
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.Code.Mark")]
+	[Name("Comment.Code.Mark")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	internal sealed class Format_Comment_Code_Mark
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_Code_Mark(){
+			DisplayName = "C++ Comment: Code: \"//\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.CommentPunct;
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.Code.Text")]
+	[Name("Comment.Code.Text")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	internal sealed class Format_Comment_Code_Text
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_Code_Text(){
+			DisplayName = "C++ Comment: Code";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.Comment;
+		}
+	}
+
+	#endregion
+	#region InlineCode
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.InlineCode.Mark")]
+	[Name("Comment.InlineCode.Mark")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_InlineCode_Mark
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_InlineCode_Mark(){
+			DisplayName = "C++ Comment: Inline Code: \"`\"";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.CommentPunct;
+		}
+	}
+
+	[Export(typeof(EditorFormatDefinition))]
+	[ClassificationType(ClassificationTypeNames = "Comment.InlineCode.Text")]
+	[Name("Comment.InlineCode.Text")]
+	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
+	[UserVisible(true)]
+	[Order(After = PredefinedClassificationTypeNames.Comment)]
+	[Order(After = "XML Doc Comment")]
+	[Order(After = "Comment.Triple")]
+	[Order(After = "Comment.Triple.Effect.Desc")]
+	[Order(After = "Comment.Triple.Note.Desc")]
+	[Order(After = "Comment.Triple.Todo.Desc")]
+	[Order(After = "Comment.Triple.See.Desc")]
+	[Order(After = "Comment.Triple.Bug.Desc")]
+	[Order(After = "Comment.Triple.Return.Desc")]
+	[Order(After = "Comment.Triple.Spare.Desc")]
+	[Order(After = "Comment.Triple.Throw.Desc")]
+	[Order(After = "Comment.Triple.Param.Desc")]
+	[Order(After = "Comment.Triple.TParam.Desc")]
+	internal sealed class Format_Comment_InlineCode_Text
+		: ClassificationFormatDefinition
+	{
+		public Format_Comment_InlineCode_Text(){
+			DisplayName = "C++ Comment: Inline Code";
+
+			BackgroundCustomizable = false;
+			ForegroundColor = Default.Colors.Comment;
+		}
+	}
+
+	#endregion
 	#endregion
 	#region Triple
 
@@ -933,149 +1076,6 @@ namespace Color.Comment
 
 			BackgroundCustomizable = false;
 			ForegroundColor = Default.Colors.Plain;
-		}
-	}
-
-	#endregion
-	#region Triple.Quote
-
-	[Export(typeof(EditorFormatDefinition))]
-	[ClassificationType(ClassificationTypeNames = "Comment.Triple.Quote.Mark")]
-	[Name("Comment.Triple.Quote.Mark")]
-	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
-	[UserVisible(true)]
-	[Order(After = PredefinedClassificationTypeNames.Comment)]
-	[Order(After = "XML Doc Comment")]
-	[Order(After = "Comment.Triple")]
-	internal sealed class Format_Comment_Quote_Mark
-		: ClassificationFormatDefinition
-	{
-		public Format_Comment_Quote_Mark(){
-			DisplayName = "C++ Documentation: Quote: \">\"";
-
-			BackgroundCustomizable = false;
-			ForegroundColor = Default.Colors.StringDark;
-		}
-	}
-
-	[Export(typeof(EditorFormatDefinition))]
-	[ClassificationType(ClassificationTypeNames = "Comment.Triple.Quote.Text")]
-	[Name("Comment.Triple.Quote.Text")]
-	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
-	[UserVisible(true)]
-	[Order(After = PredefinedClassificationTypeNames.Comment)]
-	[Order(After = "XML Doc Comment")]
-	[Order(After = "Comment.Triple")]
-	internal sealed class Format_Comment_Quote_Text
-		: ClassificationFormatDefinition
-	{
-		public Format_Comment_Quote_Text(){
-			DisplayName = "C++ Documentation: Quote";
-
-			BackgroundCustomizable = false;
-			ForegroundColor = Default.Colors.String;
-		}
-	}
-
-	#endregion
-	#region Triple.Code
-
-	[Export(typeof(EditorFormatDefinition))]
-	[ClassificationType(ClassificationTypeNames = "Comment.Triple.Code.Mark")]
-	[Name("Comment.Triple.Code.Mark")]
-	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
-	[UserVisible(true)]
-	[Order(After = PredefinedClassificationTypeNames.Comment)]
-	[Order(After = "XML Doc Comment")]
-	[Order(After = "Comment.Triple")]
-	internal sealed class Format_Comment_Code_Mark
-		: ClassificationFormatDefinition
-	{
-		public Format_Comment_Code_Mark(){
-			DisplayName = "C++ Documentation: Code: \"//\"";
-
-			BackgroundCustomizable = false;
-			ForegroundColor = Default.Colors.CommentPunct;
-		}
-	}
-
-	[Export(typeof(EditorFormatDefinition))]
-	[ClassificationType(ClassificationTypeNames = "Comment.Triple.Code.Text")]
-	[Name("Comment.Triple.Code.Text")]
-	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
-	[UserVisible(true)]
-	[Order(After = PredefinedClassificationTypeNames.Comment)]
-	[Order(After = "XML Doc Comment")]
-	[Order(After = "Comment.Triple")]
-	internal sealed class Format_Comment_Code_Text
-		: ClassificationFormatDefinition
-	{
-		public Format_Comment_Code_Text(){
-			DisplayName = "C++ Documentation: Code";
-
-			BackgroundCustomizable = false;
-			ForegroundColor = Default.Colors.Comment;
-		}
-	}
-
-	#endregion
-	#region Triple.InlineCode
-
-	[Export(typeof(EditorFormatDefinition))]
-	[ClassificationType(ClassificationTypeNames = "Comment.Triple.InlineCode.Mark")]
-	[Name("Comment.Triple.InlineCode.Mark")]
-	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
-	[UserVisible(true)]
-	[Order(After = PredefinedClassificationTypeNames.Comment)]
-	[Order(After = "XML Doc Comment")]
-	[Order(After = "Comment.Triple")]
-	[Order(After = "Comment.Triple.Effect.Desc")]
-	[Order(After = "Comment.Triple.Note.Desc")]
-	[Order(After = "Comment.Triple.Todo.Desc")]
-	[Order(After = "Comment.Triple.See.Desc")]
-	[Order(After = "Comment.Triple.Bug.Desc")]
-	[Order(After = "Comment.Triple.Return.Desc")]
-	[Order(After = "Comment.Triple.Spare.Desc")]
-	[Order(After = "Comment.Triple.Throw.Desc")]
-	[Order(After = "Comment.Triple.Param.Desc")]
-	[Order(After = "Comment.Triple.TParam.Desc")]
-	internal sealed class Format_Comment_InlineCode_Mark
-		: ClassificationFormatDefinition
-	{
-		public Format_Comment_InlineCode_Mark(){
-			DisplayName = "C++ Documentation: Inline Code: \"`\"";
-
-			BackgroundCustomizable = false;
-			ForegroundColor = Default.Colors.CommentPunct;
-		}
-	}
-
-	[Export(typeof(EditorFormatDefinition))]
-	[ClassificationType(ClassificationTypeNames = "Comment.Triple.InlineCode.Text")]
-	[Name("Comment.Triple.InlineCode.Text")]
-	[BaseDefinition(PredefinedClassificationTypeNames.Comment)]
-	[UserVisible(true)]
-	[Order(After = PredefinedClassificationTypeNames.Comment)]
-	[Order(After = "XML Doc Comment")]
-	[Order(After = "Comment.Triple")]
-	[Order(After = "Comment.Triple.Effect.Desc")]
-	[Order(After = "Comment.Triple.Note.Desc")]
-	[Order(After = "Comment.Triple.Todo.Desc")]
-	[Order(After = "Comment.Triple.See.Desc")]
-	[Order(After = "Comment.Triple.Bug.Desc")]
-	[Order(After = "Comment.Triple.Return.Desc")]
-	[Order(After = "Comment.Triple.Spare.Desc")]
-	[Order(After = "Comment.Triple.Throw.Desc")]
-	[Order(After = "Comment.Triple.Param.Desc")]
-	[Order(After = "Comment.Triple.TParam.Desc")]
-	internal sealed class Format_Comment_InlineCode_Text
-		: ClassificationFormatDefinition
-	{
-		public Format_Comment_InlineCode_Text(){
-			DisplayName = "C++ Documentation: Inline Code";
-
-			BackgroundCustomizable = false;
-			ForegroundColor = Default.Colors.Comment;
 		}
 	}
 
