@@ -10,7 +10,7 @@
 Extension adds options to overwrite colors of certain C++ Comments in files of `ContentType` `"C/C++"`, _eg_ `.cpp` or `.h` files.
 
 ## Usage
-New entries will appear in `Tools` → `Options` → `Fonts and Colors` → `Text Editor`.<br>
+New entries will appear in `Tools` → `Options` → `Environment` → `Fonts and Colors` → `Text Editor`.<br>
 Each will begin with either `C++ Comments:` xor  `C++ Documentation:` prefix.
 - Edit their color values, until you want to keep extension default ones (listed below).
 - If you don't want to change some attribute's color at all, set it's `Item foreground` value to `Automatic`.
@@ -22,14 +22,50 @@ Each will begin with either `C++ Comments:` xor  `C++ Documentation:` prefix.
 | --- | ---
 | ![](https://raw.githubusercontent.com/Benio101/Color.Comment/master/Color.Comment/PreviewDisabled.png) | ![](https://raw.githubusercontent.com/Benio101/Color.Comment/master/Color.Comment/PreviewEnabled.png)
 
+## Options
+New entries will appear in `Tools` → `Options` → `Color.Comment`. Each corresponds to different feauture.<br>
+Options allows to disable, enable xor conditionally enable related feautures (coloring blocks of comments).
+
+### States
+Full list of option states:
+
+| Enum     | State                                  | Meaning                                                                  |
+| :---     | :---                                   | :---                                                                     |
+| `No`     | No                                     | Disable feauture (don't overwrite color of it's occurencies)             |
+| `All`    | Yes, in all comments                   | Enable feauture (overwrite color of it's occurencies)                    |
+| `Triple` | Yes, but in triple slash comments only | _As above_, but only in triple slash comments _(that begins with `///`)_ |
+
+### Details
+Full list of options:
+
+| Option                              | Default state                                    |
+| :---                                | :---                                             |
+| Color parameter references          | `All`: Yes, in all comments                      |
+| Color template parameter references | `All`: Yes, in all comments                      |
+| Color member references             | `All`: Yes, in all comments                      |
+| Color static references             | `All`: Yes, in all comments                      |
+| Color local references              | `All`: Yes, in all comments                      |
+| Color macro references              | `All`: Yes, in all comments                      |
+| Color line–wide quotes              | `Triple`: Yes, but in triple slash comments only |
+| Color line–wide code                | `Triple`: Yes, but in triple slash comments only |
+| Color inline code                   | `All`: Yes, in all comments                      |
+
+### Note
+Note that editing options does not take immediate effect to keep performance.
+It requires reclassification, _eg_ triggered by editing corresponding part of code, reopening file or cut and pasting file's content.
+
 ## Customization
-Extension exposes several entries for customization across two kinds of comments to customize: `C++ Comment` and `C++ Documentation`.
+Extension exposes several entries for customization across two kinds of comments to customize:
 - `C++ Comment` prefixed ones refers to Regular comments (all but triple slash comments, _eg_ `//`, `////` or `/////`).
 - `C++ Documentation` prefixed ones refers to Documentation comments (triple slash comments (that begins with `///`).
+
 Multiline comments are not supported. They will be untouched by this extensions, so shall remain default coloring.
 
 ### Quotes
 Quotes are line–wide blocks of comments which value begins with `>`.
+
+#### Option
+Option that enables quotes is `C++ Comment: Quote`.
 
 #### Example
 ```cpp
@@ -37,10 +73,14 @@ Quotes are line–wide blocks of comments which value begins with `>`.
 /// ~ Linus Torvalds
 ```
 
-`Talk is cheap. Show me the code.` is a quote and will be colored (if enabled).
+- `Talk is cheap. Show me the code.` is a quote and will be colored as `C++ Comment: Quote`.
+- `>` is a quote mark and will be colored as `C++ Comment: Quote: ">"`.
 
 ### Code
 Codes are line–wide blocks of comments which value begins with `//`.
+
+#### Option
+Option that enables quotes is `Color line–wide code`.
 
 #### Example
 ```cpp
@@ -50,10 +90,14 @@ Codes are line–wide blocks of comments which value begins with `//`.
 void Close();
 ```
 
-`Connection.Close();` is an example and will be colored (if enabled).
+- `Connection.Close();` is a code and will be colored as `C++ Comment: Code`.
+- `Connection.Close();` is a code mark and will be colored as `C++ Comment: Code: "//"`.
 
 ### Inline Code
-Inline Codes are inline blocks of comments surrounded by Grave Accent (U+0060 ``​`​``) symbol.
+Inline Codes are blocks of comments surrounded by Grave Accent (U+0060 ``​`​``) symbol.
+
+#### Option
+Option that enables quotes is `Color inline code`.
 
 #### Example
 ```cpp
@@ -62,18 +106,29 @@ Inline Codes are inline blocks of comments surrounded by Grave Accent (U+0060 ``
 void Begin();
 ```
 
-`10.0.0.2` is an inline code and will be colored (if enabled).
+- `10.0.0.2` is an inline code and will be colored as `C++ Comment: Inline Code`.
+- ``​`​`` is an inline code mark and will be colored as ``C++ Comment: Inline Code: "`"``.
 
 ### References
 References are inline mentions of entities (functions, variables _etc._) in comments.<br>
-References consist of a single punctuation character immediatelly followed by an identifier.
+References consist of a single punctuation character immediatelly followed by an identifier (_eg_ `$Left` references parameter `Left`).
+
+#### Options
+Options that enables references are:
+- `Color parameter references`
+- `Color template parameter references`
+- `Color member references`
+- `Color static references`
+- `Color local references`
+- `Color macro references`
 
 #### Example
 ```cpp
 /// Cache with absolute value of .Result
 unsigned int Cache_AbsResult = 0;
 ```
-`.Result` is a reference to `Result` member and will be colored (if enabled).
+- `.Result` is a reference to `Result` member and will be colored as `C++ Comment: Reference: Member`.
+- `.` is a member reference mark member and will be colored as `C++ Comment: Reference: Member: "."`.
 
 #### Details
 Full list of references:
@@ -98,41 +153,19 @@ Headers are line–wide documentation commands for tools like Doxygen or standar
 /// @tparam Floating = Type convertible to `float`.
 ```
 
-#### List of Headers
-- Effect
-  - `effects?`
-  - `briefs?`
-  - `shorts?`
-  - `details?`
-- Note
-  - `notes?`
-  - `attentions?`
-  - `warn(ing)?s?`
-  - `pre`
-  - `post`
-  - `requires?`
-- Todo
-  - `to(do|fix)?`
-  - `plans?`
-  - `fixme`
-- See
-  - `see(also)?`
-  - `related?s?`
-- Bug
-  - `bugs?`
-  - `errors?`
-  - `issues?`
-- Return
-  - `returns?`
-  - `results?`
-  - `retvals?`
-- Spare
-  - `spares?`
-  - `defaults?`
-  - `backups?`
-- Throw
-  - `except(ion)?s?`
-  - `throws?`
+#### Details
+Full List of supported Headers:
+
+| Header | Command                                                   |
+| :---   | :---                                                      |
+| Effect | `effects?\|briefs?\|shorts?\|details?`                    |
+| Note   | `notes?\|attentions?\|warn(ing)?s?\|pre\|post\|requires?` |
+| Todo   | `to(do\|fix)?\|plans?\|fixme`                             |
+| See    | `see(also)?\|related?s?`                                  |
+| Bug    | `bugs?\|errors?\|issues?`                                 |
+| Return | `returns?\|results?\|retvals?`                            |
+| Spare  | `spares?\|defaults?\|backups?`                            |
+| Throw  | `except(ion)?s?\|throws?`                                 |
 
 ## Details
 Full list of customizable Comment entries, with their default colors:
