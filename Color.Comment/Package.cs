@@ -7,7 +7,10 @@ using Microsoft.VisualStudio.Shell;
 
 namespace Color.Comment
 {
-	[ProvideAutoLoad(VSConstants.UICONTEXT.VCProject_string, PackageAutoLoadFlags.BackgroundLoad)]
+	[ProvideAutoLoad(
+		VSConstants.UICONTEXT.ShellInitialized_string,
+		PackageAutoLoadFlags.BackgroundLoad
+	)]
 	[PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
 	[InstalledProductRegistration("#110", "#112", "0.0", IconResourceID = 400)]
 	[ProvideMenuResource("Menus.ctmenu", 1)]
