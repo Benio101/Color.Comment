@@ -679,7 +679,7 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<Mark>\$)"
+						@"(?<Mark>\.)"
 					+	@"(?<Member>" + Utils.Identifier + @")"
 				).Matches(CommentText))
 				{
@@ -718,7 +718,7 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<Mark>\$)"
+						@"(?<Mark>!)"
 					+	@"(?<Static>" + Utils.Identifier + @")"
 				).Matches(CommentText))
 				{
@@ -757,7 +757,7 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<Mark>\$)"
+						@"(?<Mark>@)"
 					+	@"(?<Local>" + Utils.Identifier + @")"
 				).Matches(CommentText))
 				{
@@ -796,7 +796,7 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<Mark>\$)"
+						@"(?<Mark>%)"
 					+	@"(?<Macro>" + Utils.Identifier + @")"
 				).Matches(CommentText))
 				{
