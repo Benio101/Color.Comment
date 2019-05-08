@@ -27,6 +27,8 @@ Each will begin with either `C++ Comments:` xor  `C++ Documentation:` prefix.
 New entries will appear in `Tools` → `Options` → `Color.Comment`. Each corresponds to different feauture.<br>
 Options allows to disable, enable xor conditionally enable related feautures (coloring blocks of comments).
 
+![](https://raw.githubusercontent.com/Benio101/Color.Comment/master/Color.Comment/Options.png)
+
 ### States
 Full list of option states:
 
