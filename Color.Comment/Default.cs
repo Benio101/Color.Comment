@@ -27,7 +27,7 @@
 			internal static readonly Color String        = GreenDark;
 			internal static readonly Color StringDark    = GreenVeryDark;
 			internal static readonly Color Plain         = WhiteDark;
-			internal static readonly Color Flow          = BlueDark;
+			private  static readonly Color Flow          = BlueDark;
 			internal static readonly Color Effect        = Blue;
 			internal static readonly Color Note          = Yellow;
 			internal static readonly Color Todo          = Pink;

@@ -25,8 +25,7 @@ namespace Color.Comment
 			ITypeDescriptorContext Context,
 			Type Type
 		){
-			if (Type == typeof(string)) return true;
-			return base.CanConvertFrom(Context, Type);
+			return Type == typeof(string) || base.CanConvertFrom(Context, Type);
 		}
 
 		public override object ConvertFrom(
@@ -34,19 +33,23 @@ namespace Color.Comment
 			CultureInfo Culture,
 			object Value
 		){
-			if (Value is string String)
-			{
-				if (String == "No")
-				return Option_ReferenceType.No;
-
-				if (String == "Yes, but in triple slash comments only")
-				return Option_ReferenceType.Triple;
-
-				if (String == "Yes, in all comments")
-				return Option_ReferenceType.All;
-			}
-
+			if (!(Value is string String))
 			return base.ConvertFrom(Context, Culture, Value);
+
+			switch (String)
+			{
+				case "No":
+					return Option_ReferenceType.No;
+
+				case "Yes, but in triple slash comments only":
+					return Option_ReferenceType.Triple;
+
+				case "Yes, in all comments":
+					return Option_ReferenceType.All;
+
+				default:
+					return base.ConvertFrom(Context, Culture, Value);
+			}
 		}
 
 		public override object ConvertTo(
@@ -55,19 +58,24 @@ namespace Color.Comment
 			object Value,
 			Type DestinationType
 		){
-			if (DestinationType == typeof(string))
-			{
-				if ((int) Value == (int) Option_ReferenceType.No)
-				return "No";
-
-				if ((int) Value == (int) Option_ReferenceType.Triple)
-				return "Yes, but in triple slash comments only";
-
-				if ((int) Value == (int) Option_ReferenceType.All)
-				return "Yes, in all comments";
-			}
-
+			if (DestinationType != typeof(string))
 			return base.ConvertTo(Context, Culture, Value, DestinationType);
+
+			// ReSharper disable once PossibleNullReferenceException
+			switch ((int) Value)
+			{
+				case (int) Option_ReferenceType.No:
+					return "No";
+
+				case (int) Option_ReferenceType.Triple:
+					return "Yes, but in triple slash comments only";
+
+				case (int) Option_ReferenceType.All:
+					return "Yes, in all comments";
+
+				default:
+					return base.ConvertTo(Context, Culture, Value, DestinationType);
+			}
 		}
 	}
 
@@ -80,55 +88,55 @@ namespace Color.Comment
 		[DisplayName("​​​​​Color parameter references")]
 		[Description("Color parameter references in comments (prefixed by `$`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorParamRef { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorParamRef { get; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("​​​​Color template parameter references")]
 		[Description("Color template parameter references in comments (prefixed by `^`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorTParamRef { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorTParamRef { get; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("​​​Color member references")]
 		[Description("Color non static member references in comments (prefixed by `.`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorMemberRef { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorMemberRef { get; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("​​Color static references")]
 		[Description("Color static references in comments (prefixed by `!`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorStaticRef { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorStaticRef { get; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("​Color local references")]
 		[Description("Color local references in comments (prefixed by `@`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorLocalRef { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorLocalRef { get; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("Color macro references")]
 		[Description("Color macro references in comments (prefixed by `%`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorMacroRef { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorMacroRef { get; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("Color line–wide quotes")]
 		[Description("Color quotes in comments (prefixed by `>`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorQuote { get; set; } = Option_ReferenceType.Triple;
+		public Option_ReferenceType ColorQuote { get; } = Option_ReferenceType.Triple;
 
 		[Category("Color.Comment")]
 		[DisplayName("Color line–wide code")]
 		[Description("Color line–wide code in comments (prefixed by `//`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorCode { get; set; } = Option_ReferenceType.Triple;
+		public Option_ReferenceType ColorCode { get; } = Option_ReferenceType.Triple;
 
 		[Category("Color.Comment")]
 		[DisplayName("Color inline code")]
 		[Description("Color inline code in comments (surrounded by U+0060 ` GRAVE ACCENT symbol).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorInlineCode { get; set; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorInlineCode { get; } = Option_ReferenceType.All;
 	}
 
 	internal static class Options
@@ -138,12 +146,9 @@ namespace Color.Comment
 			get
 			{
 				var Package = Project.Package;
-				if (Package == null) return Option_ReferenceType.No;
 
-				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
-				if (Page == null) return Option_ReferenceType.No;
-
-				return Page.ColorParamRef;
+				var Page = (OptionsPage) Package?.GetDialogPage(typeof(OptionsPage));
+				return Page?.ColorParamRef ?? Option_ReferenceType.No;
 			}
 		}
 
@@ -152,12 +157,9 @@ namespace Color.Comment
 			get
 			{
 				var Package = Project.Package;
-				if (Package == null) return Option_ReferenceType.No;
 
-				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
-				if (Page == null) return Option_ReferenceType.No;
-
-				return Page.ColorTParamRef;
+				var Page = (OptionsPage) Package?.GetDialogPage(typeof(OptionsPage));
+				return Page?.ColorTParamRef ?? Option_ReferenceType.No;
 			}
 		}
 
@@ -166,12 +168,9 @@ namespace Color.Comment
 			get
 			{
 				var Package = Project.Package;
-				if (Package == null) return Option_ReferenceType.No;
 
-				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
-				if (Page == null) return Option_ReferenceType.No;
-
-				return Page.ColorMemberRef;
+				var Page = (OptionsPage) Package?.GetDialogPage(typeof(OptionsPage));
+				return Page?.ColorMemberRef ?? Option_ReferenceType.No;
 			}
 		}
 
@@ -180,12 +179,9 @@ namespace Color.Comment
 			get
 			{
 				var Package = Project.Package;
-				if (Package == null) return Option_ReferenceType.No;
 
-				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
-				if (Page == null) return Option_ReferenceType.No;
-
-				return Page.ColorStaticRef;
+				var Page = (OptionsPage) Package?.GetDialogPage(typeof(OptionsPage));
+				return Page?.ColorStaticRef ?? Option_ReferenceType.No;
 			}
 		}
 
@@ -194,12 +190,9 @@ namespace Color.Comment
 			get
 			{
 				var Package = Project.Package;
-				if (Package == null) return Option_ReferenceType.No;
 
-				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
-				if (Page == null) return Option_ReferenceType.No;
-
-				return Page.ColorLocalRef;
+				var Page = (OptionsPage) Package?.GetDialogPage(typeof(OptionsPage));
+				return Page?.ColorLocalRef ?? Option_ReferenceType.No;
 			}
 		}
 
@@ -208,12 +201,9 @@ namespace Color.Comment
 			get
 			{
 				var Package = Project.Package;
-				if (Package == null) return Option_ReferenceType.No;
 
-				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
-				if (Page == null) return Option_ReferenceType.No;
-
-				return Page.ColorMacroRef;
+				var Page = (OptionsPage) Package?.GetDialogPage(typeof(OptionsPage));
+				return Page?.ColorMacroRef ?? Option_ReferenceType.No;
 			}
 		}
 
@@ -222,12 +212,9 @@ namespace Color.Comment
 			get
 			{
 				var Package = Project.Package;
-				if (Package == null) return Option_ReferenceType.No;
 
-				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
-				if (Page == null) return Option_ReferenceType.No;
-
-				return Page.ColorQuote;
+				var Page = (OptionsPage) Package?.GetDialogPage(typeof(OptionsPage));
+				return Page?.ColorQuote ?? Option_ReferenceType.No;
 			}
 		}
 
@@ -236,12 +223,9 @@ namespace Color.Comment
 			get
 			{
 				var Package = Project.Package;
-				if (Package == null) return Option_ReferenceType.No;
 
-				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
-				if (Page == null) return Option_ReferenceType.No;
-
-				return Page.ColorCode;
+				var Page = (OptionsPage) Package?.GetDialogPage(typeof(OptionsPage));
+				return Page?.ColorCode ?? Option_ReferenceType.No;
 			}
 		}
 
@@ -250,12 +234,9 @@ namespace Color.Comment
 			get
 			{
 				var Package = Project.Package;
-				if (Package == null) return Option_ReferenceType.No;
 
-				var Page = (OptionsPage) Package.GetDialogPage(typeof(OptionsPage));
-				if (Page == null) return Option_ReferenceType.No;
-
-				return Page.ColorInlineCode;
+				var Page = (OptionsPage) Package?.GetDialogPage(typeof(OptionsPage));
+				return Page?.ColorInlineCode ?? Option_ReferenceType.No;
 			}
 		}
 	}

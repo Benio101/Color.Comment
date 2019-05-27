@@ -32,6 +32,6 @@ namespace Color.Comment
 
 	internal static class Project
 	{
-		internal static Package Package = null;
+		internal static Package Package;
 	}
 }

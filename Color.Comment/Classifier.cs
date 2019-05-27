@@ -10,9 +10,9 @@ namespace Color.Comment
 {
 	public class CommentHeader
 	{
-		public IClassificationType Mark;
-		public IClassificationType Desc;
-		public List<string> Names = new List<string>();
+		public readonly IClassificationType Mark;
+		public readonly IClassificationType Desc;
+		public readonly List<string> Names = new List<string>();
 
 		public CommentHeader(
 			IClassificationType Mark,
@@ -172,7 +172,7 @@ namespace Color.Comment
 				Registry.GetClassificationType("Comment.Triple.TParam.Desc");
 
 			// Comment Headers
-			foreach (string Header in Meta.Headers){
+			foreach (var Header in Meta.Headers){
 				CommentHeaders.Add(Header, new CommentHeader(
 					Registry.GetClassificationType("Comment.Triple." + Header + ".Mark"),
 					Registry.GetClassificationType("Comment.Triple." + Header + ".Desc")
@@ -242,12 +242,13 @@ namespace Color.Comment
 			IList<ClassificationSpan> Spans = new List<ClassificationSpan>();
 
 			if (Span.IsEmpty) return Spans;
-			string Text = Span.GetText();
+			var Text = Span.GetText();
 
 			// Offset from begin of Span's Text and current Text.
-			int Offset = 0;
+			var Offset = 0;
 
 			// Additional offset to add to @Offset on current iteration.
+			// ReSharper disable once TooWideLocalVariableScope
 			int CurrentOffset;
 
 			NextComment:
@@ -271,13 +272,13 @@ namespace Color.Comment
 
 					bool IsStarComment = false;
 					var StarIntersections = IClassifier.GetClassificationSpans(StarSpan);
-					foreach (ClassificationSpan Intersection in StarIntersections){
+					foreach (var Intersection in StarIntersections){
 						var Classifications = Intersection.ClassificationType.Classification.Split(
 							new[]{" - "}, StringSplitOptions.None
 						);
 
 						// Comment must be classified as either "comment" or "XML Doc Comment".
-						if (Utils.IsClassifiedAs(Classifications, new string[]{
+						if (Utils.IsClassifiedAs(Classifications, new[]{
 							PredefinedClassificationTypeNames.Comment,
 							"XML Doc Comment"
 						})){
@@ -286,10 +287,7 @@ namespace Color.Comment
 					}
 
 					// Star is part of comment, eg "/* multiline comment followed by single *///".
-					if (IsStarComment) StarOffset = 2;
-
-					// Star is not part of comment, eg "int i = 3 */// Triple it! \n\t 5 // 15".
-					else StarOffset = 1;
+					StarOffset = IsStarComment ? 2 : 1;
 				}
 
 				var MatchedSpan = new SnapshotSpan(Span.Snapshot, new Span(
@@ -298,13 +296,13 @@ namespace Color.Comment
 				));
 
 				var Intersections = IClassifier.GetClassificationSpans(MatchedSpan);
-				foreach (ClassificationSpan Intersection in Intersections){
+				foreach (var Intersection in Intersections){
 					var Classifications = Intersection.ClassificationType.Classification.Split(
 						new[]{" - "}, StringSplitOptions.None
 					);
 
 					// Comment must be classified as either "comment" or "XML Doc Comment".
-					if (!Utils.IsClassifiedAs(Classifications, new string[]{
+					if (!Utils.IsClassifiedAs(Classifications, new[]{
 						PredefinedClassificationTypeNames.Comment,
 						"XML Doc Comment"
 					})){
@@ -312,7 +310,7 @@ namespace Color.Comment
 					}
 
 					// Prevent recursive matching fragment of comment as another comment.
-					if (Utils.IsClassifiedAs(Classifications, new string[]{
+					if (Utils.IsClassifiedAs(Classifications, new[]{
 						"Comment.Default",
 						"Comment.Triple"
 					})){
@@ -320,19 +318,19 @@ namespace Color.Comment
 					}
 				}
 
-				IClassificationType Comment = Comment_Default;
-				IClassificationType Comment_Slashes = Comment_Default_Slashes;
+				var Comment = Comment_Default;
+				var Comment_Slashes = Comment_Default_Slashes;
 
 				// Start offset of slashes (without star part: either "*" or "*/").
 				int SlashesStart = Span.Start + Offset + Match.Groups["Slashes"].Index;
 				if (StarOffset == 2) SlashesStart += 1;
 
 				// Slashes length (optionally without first "/" as it's end of multiline comment).
-				int SlashesLength = Match.Groups["Slashes"].Length;
+				var SlashesLength = Match.Groups["Slashes"].Length;
 				if (StarOffset == 2) SlashesLength -= 1;
 
 				// If comment is triple slash (begins with "///").
-				bool IsTripleSlash = SlashesLength == 3;
+				var IsTripleSlash = SlashesLength == 3;
 
 				if (IsTripleSlash){
 					Comment = Comment_Triple;
@@ -353,18 +351,18 @@ namespace Color.Comment
 					)), Comment_Slashes
 				));
 
-				string CommentText = Match.Groups["Comment"].Value;
+				var CommentText = Match.Groups["Comment"].Value;
 				int CommentStart = Span.Start + Offset + Match.Groups["Comment"].Index;
 
 				if (IsTripleSlash)
 				{
 					#region Headers
 
-					foreach (string Header in Meta.Headers){
+					foreach (var Header in Meta.Headers){
 						var List = string.Join("|", CommentHeaders[Header].Names.ToArray());
 						foreach (Match CommentMatch in new Regex(
 								@"^(?<Punct_Header>[\\@])"
-							+	@"(?<Mark>(" + List + @")(?!" + Utils.Identifier + @"))"
+							+	"(?<Mark>(" + List + ")(?!" + Utils.Identifier + "))"
 							+	@"[ \t\v\f]*(?<Punct>[:=]?)" + @"[ \t\v\f]*"
 							+	@"(?<Desc>[^\n]*)"
 
@@ -406,10 +404,10 @@ namespace Color.Comment
 					#endregion
 					#region Param & TParam
 
-					foreach (string Header in new string[]{"Param", "TParam"}){
+					foreach (var Header in new[]{"Param", "TParam"}){
 						foreach (Match CommentMatch in new Regex(
 								@"^(?<Punct_Header>[\\@])?"
-							+	@"(?<Mark>(" + Header + @")(?!" + Utils.Identifier + @"))"
+							+	 "(?<Mark>(" + Header + ")(?!" + Utils.Identifier + "))"
 							+	@"[ \t\v\f]*(?<Name>(" + Utils.Identifier + @"|(?=\.{3}))(\.{3})?)"
 							+	@"[ \t\v\f]*(?<Punct>[:=]?)" + @"[ \t\v\f]*"
 							+	@"(?<Desc>[^\n]*)"
@@ -417,9 +415,9 @@ namespace Color.Comment
 							,	RegexOptions.IgnoreCase
 						).Matches(CommentText))
 						{
-							IClassificationType Mark = Comment_Triple_Param_Mark;
-							IClassificationType Name = Comment_Triple_Param_Name;
-							IClassificationType Desc = Comment_Triple_Param_Desc;
+							var Mark = Comment_Triple_Param_Mark;
+							var Name = Comment_Triple_Param_Name;
+							var Desc = Comment_Triple_Param_Desc;
 
 							if (Header == "TParam"){
 								Mark = Comment_Triple_TParam_Mark;
@@ -469,7 +467,7 @@ namespace Color.Comment
 					#endregion
 				}
 
-				bool SkipInlineMatching = false;
+				var SkipInlineMatching = false;
 
 				#region Quote
 
@@ -481,7 +479,7 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"^(?<Mark>>)"
+						"^(?<Mark>>)"
 					+	@"[ \t\v\f]*(?<Desc>[^\n]*)"
 				).Matches(CommentText))
 				{
@@ -517,7 +515,7 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"^(?<Mark>//)"
+						"^(?<Mark>//)"
 					+	@"[ \t\v\f]*(?<Desc>[^\n]*)"
 				).Matches(CommentText))
 				{
@@ -544,7 +542,7 @@ namespace Color.Comment
 
 				#endregion
 
-				var InlineCodePositions = new List<(int Min, int Max)>{};
+				var InlineCodePositions = new List<(int Min, int Max)>();
 
 				#region InlineCode
 
@@ -556,9 +554,9 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<Mark_Open>`)"
-					+	@"(?<Code>[^`]*)"
-					+	@"(?<Mark_Close>`)"
+						"(?<Mark_Open>`)"
+					+	"(?<Code>[^`]*)"
+					+	"(?<Mark_Close>`)"
 				).Matches(CommentText))
 				{
 					if (CommentMatch.Groups["Mark_Open"].Length > 0)
@@ -601,9 +599,9 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<!" + Utils.IdentifierCharacter + @")"
+						"(?<!" + Utils.IdentifierCharacter + ")"
 					+	@"(?<Mark>\$)"
-					+	@"(?<Param>" + Utils.Identifier + @")"
+					+	"(?<Param>" + Utils.Identifier + ")"
 				).Matches(CommentText))
 				{
 					var MarkIndex = CommentMatch.Groups["Mark"].Index;
@@ -641,9 +639,9 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<!" + Utils.IdentifierCharacter + @")"
+						"(?<!" + Utils.IdentifierCharacter + ")"
 					+	@"(?<Mark>\^)"
-					+	@"(?<TParam>" + Utils.Identifier + @")"
+					+	"(?<TParam>" + Utils.Identifier + ")"
 				).Matches(CommentText))
 				{
 					var MarkIndex = CommentMatch.Groups["Mark"].Index;
@@ -681,9 +679,9 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<!" + Utils.IdentifierCharacter + @")"
+						"(?<!" + Utils.IdentifierCharacter + ")"
 					+	@"(?<Mark>\.)"
-					+	@"(?<Member>" + Utils.Identifier + @")"
+					+	"(?<Member>" + Utils.Identifier + ")"
 				).Matches(CommentText))
 				{
 					var MarkIndex = CommentMatch.Groups["Mark"].Index;
@@ -721,9 +719,9 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<!" + Utils.IdentifierCharacter + @")"
-					+	@"(?<Mark>!)"
-					+	@"(?<Static>" + Utils.Identifier + @")"
+						"(?<!" + Utils.IdentifierCharacter + ")"
+					+	"(?<Mark>!)"
+					+	"(?<Static>" + Utils.Identifier + ")"
 				).Matches(CommentText))
 				{
 					var MarkIndex = CommentMatch.Groups["Mark"].Index;
@@ -761,9 +759,9 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<!" + Utils.IdentifierCharacter + @")"
-					+	@"(?<Mark>@)"
-					+	@"(?<Local>" + Utils.Identifier + @")"
+						"(?<!" + Utils.IdentifierCharacter + ")"
+					+	"(?<Mark>@)"
+					+	"(?<Local>" + Utils.Identifier + ")"
 				).Matches(CommentText))
 				{
 					var MarkIndex = CommentMatch.Groups["Mark"].Index;
@@ -801,9 +799,9 @@ namespace Color.Comment
 						)
 				)
 				foreach (Match CommentMatch in new Regex(
-						@"(?<!" + Utils.IdentifierCharacter + @")"
-					+	@"(?<Mark>%)"
-					+	@"(?<Macro>" + Utils.Identifier + @")"
+						"(?<!" + Utils.IdentifierCharacter + ")"
+					+	"(?<Mark>%)"
+					+	"(?<Macro>" + Utils.Identifier + ")"
 				).Matches(CommentText))
 				{
 					var MarkIndex = CommentMatch.Groups["Mark"].Index;
