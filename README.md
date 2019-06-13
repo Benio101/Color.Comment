@@ -185,29 +185,29 @@ Full list of customizable Comment entries, with their default colors:
 | Comment entry                                      | Type          | Color           | RGB (0 – 255) |
 | :---                                               | :---          | :---            | :---          |
 | C++ Comment                                        | Comment       | Gray            | 128, 128, 128 |
-| C++ Comment: "//"                                  | Comment Punct | Dark Gray       |  80,  80,  80 |
-| C++ Comment: Reference: Parameter: "$"             | Comment Punct | Dark Gray       |  80,  80,  80 |
+| C++ Comment: "//"                                  | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
+| C++ Comment: Reference: Parameter: "$"             | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Parameter                  | Param         | Orange          | 224, 176, 128 |
-| C++ Comment: Reference: Template Parameter: "^"    | Comment Punct | Dark Gray       |  80,  80,  80 |
+| C++ Comment: Reference: Template Parameter: "^"    | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Template Parameter         | TParam        | Purple          | 176, 128, 224 |
-| C++ Comment: Reference: Member: "."                | Comment Punct | Dark Gray       |  80,  80,  80 |
+| C++ Comment: Reference: Member: "."                | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Member                     | Member        | Yellow          | 224, 224, 128 |
-| C++ Comment: Reference: Static: "!"                | Comment Punct | Dark Gray       |  80,  80,  80 |
+| C++ Comment: Reference: Static: "!"                | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Static                     | Static        | Red             | 224, 128, 128 |
-| C++ Comment: Reference: Local: "@"                 | Comment Punct | Dark Gray       |  80,  80,  80 |
+| C++ Comment: Reference: Local: "@"                 | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Local                      | Local         | White           | 224, 224, 224 |
-| C++ Comment: Reference: Macro: "%"                 | Comment Punct | Dark Gray       |  80,  80,  80 |
+| C++ Comment: Reference: Macro: "%"                 | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Macro                      | Macro         | Purple          | 176, 128, 224 |
-| C++ Comment: Quote: ">"                            | Dark String   | Very Dark Green |  80,  96,  64 |
-| C++ Comment: Quote                                 | String        | Dark Green      | 128, 176,  96 |
-| C++ Comment: Code: "//"                            | Comment Punct | Dark Gray       |  80,  80,  80 |
+| C++ Comment: Quote: ">"                            | Dark String   | Very Dark Green | ​ 80, ​ 96, ​ 64 |
+| C++ Comment: Quote                                 | String        | Dark Green      | 128, 176, ​ 96 |
+| C++ Comment: Code: "//"                            | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Code                                  | Comment       | Gray            | 128, 128, 128 |
-| C++ Comment: Inline Code: "\`"                     | Comment Punct | Dark Gray       |  80,  80,  80 |
+| C++ Comment: Inline Code: "\`"                     | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Inline Code                           | Comment       | Gray            | 128, 128, 128 |
 | C++ Documentation                                  | Plain         | Dark White      | 176, 176, 176 |
-| C++ Documentation: "///"                           | Comment Punct | Dark Gray       |  80,  80,  80 |
-| C++ Documentation: Punctuation                     | Comment Punct | Dark Gray       |  80,  80,  80 |
-| C++ Documentation: Punctuation: \"@\" \| \"\\\"    | Comment Punct | Dark Gray       |  80,  80,  80 |
+| C++ Documentation: "///"                           | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
+| C++ Documentation: Punctuation                     | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
+| C++ Documentation: Punctuation: \"@\" \| \"\\\"    | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Documentation: Effect                          | Effect        | Blue            | 128, 176, 224 |
 | C++ Documentation: Effect: Description             | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: Note                            | Note          | Yellow          | 224, 224, 128 |
@@ -216,9 +216,9 @@ Full list of customizable Comment entries, with their default colors:
 | C++ Documentation: Todo: Description               | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: See                             | Effect        | Green           | 176, 224, 128 |
 | C++ Documentation: See: Description                | Plain         | Dark White      | 176, 176, 176 |
-| C++ Documentation: Bug                             | Effect        | Dark Red        | 224,  96,  96 |
+| C++ Documentation: Bug                             | Effect        | Dark Red        | 224, ​ 96, ​ 96 |
 | C++ Documentation: Bug: Description                | Plain         | Dark White      | 176, 176, 176 |
-| C++ Documentation: Return                          | Return        | Dark Blue       |  96, 128, 224 |
+| C++ Documentation: Return                          | Return        | Dark Blue       | ​ 96, 128, 224 |
 | C++ Documentation: Return: Description             | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: Spare                           | Spare         | Green           | 176, 224, 128 |
 | C++ Documentation: Spare: Description              | Plain         | Dark White      | 176, 176, 176 |
