@@ -5,6 +5,7 @@
 | Branch | Build Status
 | ---   | ---
 | `master` | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/master?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/master)
+| `2017` | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/2017?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/2017)
 
 ## Description
 Extension adds options to overwrite colors of certain C++ Comments.<br>
