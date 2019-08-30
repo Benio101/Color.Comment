@@ -88,55 +88,55 @@ namespace Color.Comment
 		[DisplayName("​​​​​Color parameter references")]
 		[Description("Color parameter references in comments (prefixed by `$`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorParamRef { get; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorParamRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("​​​​Color template parameter references")]
 		[Description("Color template parameter references in comments (prefixed by `^`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorTParamRef { get; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorTParamRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("​​​Color member references")]
 		[Description("Color non static member references in comments (prefixed by `.`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorMemberRef { get; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorMemberRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("​​Color static references")]
 		[Description("Color static references in comments (prefixed by `!`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorStaticRef { get; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorStaticRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("​Color local references")]
 		[Description("Color local references in comments (prefixed by `@`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorLocalRef { get; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorLocalRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("Color macro references")]
 		[Description("Color macro references in comments (prefixed by `%`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorMacroRef { get; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorMacroRef { get; set; } = Option_ReferenceType.All;
 
 		[Category("Color.Comment")]
 		[DisplayName("Color line–wide quotes")]
 		[Description("Color quotes in comments (prefixed by `>`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorQuote { get; } = Option_ReferenceType.Triple;
+		public Option_ReferenceType ColorQuote { get; set; } = Option_ReferenceType.Triple;
 
 		[Category("Color.Comment")]
 		[DisplayName("Color line–wide code")]
 		[Description("Color line–wide code in comments (prefixed by `//`).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorCode { get; } = Option_ReferenceType.Triple;
+		public Option_ReferenceType ColorCode { get; set; } = Option_ReferenceType.Triple;
 
 		[Category("Color.Comment")]
 		[DisplayName("Color inline code")]
 		[Description("Color inline code in comments (surrounded by U+0060 ` GRAVE ACCENT symbol).")]
 		[TypeConverter(typeof(Option_ReferenceType_Converter))]
-		public Option_ReferenceType ColorInlineCode { get; } = Option_ReferenceType.All;
+		public Option_ReferenceType ColorInlineCode { get; set; } = Option_ReferenceType.All;
 	}
 
 	internal static class Options
