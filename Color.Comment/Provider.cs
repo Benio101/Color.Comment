@@ -1,19 +1,23 @@
-﻿using System.ComponentModel.Composition;
-
-using Microsoft.VisualStudio.Text;
+﻿using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Classification;
 using Microsoft.VisualStudio.Utilities;
+using System.ComponentModel.Composition;
 
 namespace Color.Comment
 {
-	[Export(typeof(IClassifierProvider))]
-	[ContentType("C/C++")]
+	[
+		Export(typeof(IClassifierProvider)),
+		ContentType("C/C++")
+	]
+
 	internal sealed class ClassifierProvider
-		: IClassifierProvider
+	:
+		IClassifierProvider
 	{
-		// > Field is never assigned
-		// Reason The field is assigned by MEF.
 		#pragma warning disable 649
+
+		// > The field is never used
+		// Reason: The field is used by MEF.
 
 		[Import]
 		private readonly IClassificationTypeRegistryService ClassificationTypeRegistryService;

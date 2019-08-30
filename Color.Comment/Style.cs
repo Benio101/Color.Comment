@@ -15,7 +15,8 @@ namespace Color.Comment
 	[Order(After = PredefinedClassificationTypeNames.Comment)]
 	[Order(After = "XML Doc Comment")]
 	internal sealed class Format_Comment_Default
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Default()
 		{
@@ -35,7 +36,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Default")]
 	internal sealed class Format_Comment_Default_Slashes
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Default_Slashes()
 		{
@@ -67,7 +69,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_ParamRef_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_ParamRef_Mark()
 		{
@@ -97,7 +100,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_ParamRef_Param
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_ParamRef_Param()
 		{
@@ -130,7 +134,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_TParamRef_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_TParamRef_Mark()
 		{
@@ -160,7 +165,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_TParamRef_TParam
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_TParamRef_TParam()
 		{
@@ -193,7 +199,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_MemberRef_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_MemberRef_Mark()
 		{
@@ -223,7 +230,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_MemberRef_Member
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_MemberRef_Member()
 		{
@@ -256,7 +264,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_StaticRef_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_StaticRef_Mark()
 		{
@@ -286,7 +295,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_StaticRef_Static
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_StaticRef_Static()
 		{
@@ -319,7 +329,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_LocalRef_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_LocalRef_Mark()
 		{
@@ -349,7 +360,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_LocalRef_Local
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_LocalRef_Local()
 		{
@@ -382,7 +394,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_MacroRef_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_MacroRef_Mark()
 		{
@@ -412,7 +425,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_MacroRef_Macro
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_MacroRef_Macro()
 		{
@@ -435,7 +449,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Quote_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Quote_Mark()
 		{
@@ -455,7 +470,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Quote_Text
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Quote_Text()
 		{
@@ -478,7 +494,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Code_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Code_Mark()
 		{
@@ -498,7 +515,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Code_Text
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Code_Text()
 		{
@@ -531,7 +549,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_InlineCode_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_InlineCode_Mark()
 		{
@@ -561,7 +580,8 @@ namespace Color.Comment
 	[Order(After = "Comment.Triple.Param.Desc")]
 	[Order(After = "Comment.Triple.TParam.Desc")]
 	internal sealed class Format_Comment_InlineCode_Text
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_InlineCode_Text()
 		{
@@ -584,7 +604,8 @@ namespace Color.Comment
 	[Order(After = PredefinedClassificationTypeNames.Comment)]
 	[Order(After = "XML Doc Comment")]
 	internal sealed class Format_Comment_Triple
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple()
 		{
@@ -604,7 +625,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Slashes
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Slashes()
 		{
@@ -624,7 +646,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Punct
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Punct()
 		{
@@ -644,7 +667,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Punct_Header
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Punct_Header()
 		{
@@ -666,7 +690,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Effect_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Effect_Mark()
 		{
@@ -686,7 +711,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Effect_Desc
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Effect_Desc()
 		{
@@ -709,7 +735,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Note_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Note_Mark()
 		{
@@ -729,7 +756,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Note_Desc
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Note_Desc()
 		{
@@ -752,7 +780,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Todo_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Todo_Mark()
 		{
@@ -772,7 +801,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Todo_Desc
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Todo_Desc()
 		{
@@ -795,7 +825,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_See_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_See_Mark()
 		{
@@ -815,7 +846,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_See_Desc
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_See_Desc()
 		{
@@ -838,7 +870,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Bug_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Bug_Mark()
 		{
@@ -858,7 +891,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Bug_Desc
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Bug_Desc()
 		{
@@ -881,7 +915,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Return_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Return_Mark()
 		{
@@ -901,7 +936,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Return_Desc
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Return_Desc()
 		{
@@ -924,7 +960,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Spare_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Spare_Mark()
 		{
@@ -944,7 +981,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Spare_Desc
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Spare_Desc()
 		{
@@ -967,7 +1005,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Throw_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Throw_Mark()
 		{
@@ -987,7 +1026,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Throw_Desc
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Throw_Desc()
 		{
@@ -1010,7 +1050,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Param_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Param_Mark()
 		{
@@ -1030,7 +1071,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Param_Name
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Param_Name()
 		{
@@ -1050,7 +1092,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_Param_Desc
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_Param_Desc()
 		{
@@ -1073,7 +1116,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_TParam_Mark
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_TParam_Mark()
 		{
@@ -1093,7 +1137,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_TParam_Name
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_TParam_Name()
 		{
@@ -1113,7 +1158,8 @@ namespace Color.Comment
 	[Order(After = "XML Doc Comment")]
 	[Order(After = "Comment.Triple")]
 	internal sealed class Format_Comment_Triple_TParam_Desc
-		: ClassificationFormatDefinition
+	:
+		ClassificationFormatDefinition
 	{
 		public Format_Comment_Triple_TParam_Desc()
 		{

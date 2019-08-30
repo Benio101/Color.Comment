@@ -88,7 +88,8 @@ namespace Color.Comment
 		(
 			string[] Source,
 			string[] Search
-		){
+		)
+		{
 			return
 			(
 					Source.Length > 0
