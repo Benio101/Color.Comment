@@ -11,12 +11,14 @@ namespace Color.Comment
 	{
 		public readonly IClassificationType Mark;
 		public readonly IClassificationType Desc;
-		public readonly List<string> Names = new List<string>();
+		public readonly List<string>        Names = new List<string>();
 
-		public CommentHeader(
+		public CommentHeader
+		(
 			IClassificationType Mark,
 			IClassificationType Desc
-		){
+		)
+		{
 			this.Mark = Mark;
 			this.Desc = Desc;
 		}
