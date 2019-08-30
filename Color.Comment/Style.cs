@@ -1,8 +1,7 @@
-﻿using System.ComponentModel.Composition;
-
-using Microsoft.VisualStudio.Language.StandardClassification;
+﻿using Microsoft.VisualStudio.Language.StandardClassification;
 using Microsoft.VisualStudio.Text.Classification;
 using Microsoft.VisualStudio.Utilities;
+using System.ComponentModel.Composition;
 
 namespace Color.Comment
 {
@@ -18,7 +17,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Default
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Default(){
+		public Format_Comment_Default()
+		{
 			DisplayName = "C++ Comment";
 
 			BackgroundCustomizable = false;
@@ -37,7 +37,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Default_Slashes
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Default_Slashes(){
+		public Format_Comment_Default_Slashes()
+		{
 			DisplayName = "C++ Comment: \"//\"";
 
 			BackgroundCustomizable = false;
@@ -68,7 +69,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_ParamRef_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_ParamRef_Mark(){
+		public Format_Comment_ParamRef_Mark()
+		{
 			DisplayName = "C++ Comment: Reference: Parameter: \"$\"";
 
 			BackgroundCustomizable = false;
@@ -97,7 +99,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_ParamRef_Param
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_ParamRef_Param(){
+		public Format_Comment_ParamRef_Param()
+		{
 			DisplayName = "C++ Comment: Reference: Parameter";
 
 			BackgroundCustomizable = false;
@@ -129,7 +132,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_TParamRef_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_TParamRef_Mark(){
+		public Format_Comment_TParamRef_Mark()
+		{
 			DisplayName = "C++ Comment: Reference: Template Parameter: \"^\"";
 
 			BackgroundCustomizable = false;
@@ -158,7 +162,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_TParamRef_TParam
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_TParamRef_TParam(){
+		public Format_Comment_TParamRef_TParam()
+		{
 			DisplayName = "C++ Comment: Reference: Template Parameter";
 
 			BackgroundCustomizable = false;
@@ -190,7 +195,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_MemberRef_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_MemberRef_Mark(){
+		public Format_Comment_MemberRef_Mark()
+		{
 			DisplayName = "C++ Comment: Reference: Member: \".\"";
 
 			BackgroundCustomizable = false;
@@ -219,7 +225,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_MemberRef_Member
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_MemberRef_Member(){
+		public Format_Comment_MemberRef_Member()
+		{
 			DisplayName = "C++ Comment: Reference: Member";
 
 			BackgroundCustomizable = false;
@@ -251,7 +258,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_StaticRef_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_StaticRef_Mark(){
+		public Format_Comment_StaticRef_Mark()
+		{
 			DisplayName = "C++ Comment: Reference: Static: \"!\"";
 
 			BackgroundCustomizable = false;
@@ -280,7 +288,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_StaticRef_Static
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_StaticRef_Static(){
+		public Format_Comment_StaticRef_Static()
+		{
 			DisplayName = "C++ Comment: Reference: Static";
 
 			BackgroundCustomizable = false;
@@ -312,7 +321,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_LocalRef_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_LocalRef_Mark(){
+		public Format_Comment_LocalRef_Mark()
+		{
 			DisplayName = "C++ Comment: Reference: Local: \"@\"";
 
 			BackgroundCustomizable = false;
@@ -341,7 +351,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_LocalRef_Local
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_LocalRef_Local(){
+		public Format_Comment_LocalRef_Local()
+		{
 			DisplayName = "C++ Comment: Reference: Local";
 
 			BackgroundCustomizable = false;
@@ -373,7 +384,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_MacroRef_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_MacroRef_Mark(){
+		public Format_Comment_MacroRef_Mark()
+		{
 			DisplayName = "C++ Comment: Reference: Macro: \"%\"";
 
 			BackgroundCustomizable = false;
@@ -402,7 +414,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_MacroRef_Macro
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_MacroRef_Macro(){
+		public Format_Comment_MacroRef_Macro()
+		{
 			DisplayName = "C++ Comment: Reference: Macro";
 
 			BackgroundCustomizable = false;
@@ -424,7 +437,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Quote_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Quote_Mark(){
+		public Format_Comment_Quote_Mark()
+		{
 			DisplayName = "C++ Comment: Quote: \">\"";
 
 			BackgroundCustomizable = false;
@@ -443,7 +457,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Quote_Text
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Quote_Text(){
+		public Format_Comment_Quote_Text()
+		{
 			DisplayName = "C++ Comment: Quote";
 
 			BackgroundCustomizable = false;
@@ -465,7 +480,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Code_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Code_Mark(){
+		public Format_Comment_Code_Mark()
+		{
 			DisplayName = "C++ Comment: Code: \"//\"";
 
 			BackgroundCustomizable = false;
@@ -484,7 +500,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Code_Text
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Code_Text(){
+		public Format_Comment_Code_Text()
+		{
 			DisplayName = "C++ Comment: Code";
 
 			BackgroundCustomizable = false;
@@ -516,7 +533,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_InlineCode_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_InlineCode_Mark(){
+		public Format_Comment_InlineCode_Mark()
+		{
 			DisplayName = "C++ Comment: Inline Code: \"`\"";
 
 			BackgroundCustomizable = false;
@@ -545,7 +563,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_InlineCode_Text
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_InlineCode_Text(){
+		public Format_Comment_InlineCode_Text()
+		{
 			DisplayName = "C++ Comment: Inline Code";
 
 			BackgroundCustomizable = false;
@@ -567,7 +586,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple(){
+		public Format_Comment_Triple()
+		{
 			DisplayName = "C++ Documentation";
 
 			BackgroundCustomizable = false;
@@ -586,7 +606,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Slashes
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Slashes(){
+		public Format_Comment_Triple_Slashes()
+		{
 			DisplayName = "C++ Documentation: \"///\"";
 
 			BackgroundCustomizable = false;
@@ -605,7 +626,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Punct
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Punct(){
+		public Format_Comment_Triple_Punct()
+		{
 			DisplayName = "C++ Documentation: Punctuation";
 
 			BackgroundCustomizable = false;
@@ -624,7 +646,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Punct_Header
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Punct_Header(){
+		public Format_Comment_Triple_Punct_Header()
+		{
 			DisplayName = "C++ Documentation: Punctuation: \"@\" | \"\\\"";
 
 			BackgroundCustomizable = false;
@@ -645,7 +668,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Effect_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Effect_Mark(){
+		public Format_Comment_Triple_Effect_Mark()
+		{
 			DisplayName = "C++ Documentation: Effect";
 
 			BackgroundCustomizable = false;
@@ -664,7 +688,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Effect_Desc
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Effect_Desc(){
+		public Format_Comment_Triple_Effect_Desc()
+		{
 			DisplayName = "C++ Documentation: Effect: Description";
 
 			BackgroundCustomizable = false;
@@ -686,7 +711,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Note_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Note_Mark(){
+		public Format_Comment_Triple_Note_Mark()
+		{
 			DisplayName = "C++ Documentation: Note";
 
 			BackgroundCustomizable = false;
@@ -705,7 +731,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Note_Desc
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Note_Desc(){
+		public Format_Comment_Triple_Note_Desc()
+		{
 			DisplayName = "C++ Documentation: Note: Description";
 
 			BackgroundCustomizable = false;
@@ -727,7 +754,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Todo_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Todo_Mark(){
+		public Format_Comment_Triple_Todo_Mark()
+		{
 			DisplayName = "C++ Documentation: Todo";
 
 			BackgroundCustomizable = false;
@@ -746,7 +774,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Todo_Desc
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Todo_Desc(){
+		public Format_Comment_Triple_Todo_Desc()
+		{
 			DisplayName = "C++ Documentation: Todo: Description";
 
 			BackgroundCustomizable = false;
@@ -768,7 +797,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_See_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_See_Mark(){
+		public Format_Comment_Triple_See_Mark()
+		{
 			DisplayName = "C++ Documentation: See";
 
 			BackgroundCustomizable = false;
@@ -787,7 +817,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_See_Desc
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_See_Desc(){
+		public Format_Comment_Triple_See_Desc()
+		{
 			DisplayName = "C++ Documentation: See: Description";
 
 			BackgroundCustomizable = false;
@@ -809,7 +840,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Bug_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Bug_Mark(){
+		public Format_Comment_Triple_Bug_Mark()
+		{
 			DisplayName = "C++ Documentation: Bug";
 
 			BackgroundCustomizable = false;
@@ -828,7 +860,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Bug_Desc
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Bug_Desc(){
+		public Format_Comment_Triple_Bug_Desc()
+		{
 			DisplayName = "C++ Documentation: Bug: Description";
 
 			BackgroundCustomizable = false;
@@ -850,7 +883,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Return_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Return_Mark(){
+		public Format_Comment_Triple_Return_Mark()
+		{
 			DisplayName = "C++ Documentation: Return";
 
 			BackgroundCustomizable = false;
@@ -869,7 +903,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Return_Desc
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Return_Desc(){
+		public Format_Comment_Triple_Return_Desc()
+		{
 			DisplayName = "C++ Documentation: Return: Description";
 
 			BackgroundCustomizable = false;
@@ -891,7 +926,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Spare_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Spare_Mark(){
+		public Format_Comment_Triple_Spare_Mark()
+		{
 			DisplayName = "C++ Documentation: Spare";
 
 			BackgroundCustomizable = false;
@@ -910,7 +946,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Spare_Desc
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Spare_Desc(){
+		public Format_Comment_Triple_Spare_Desc()
+		{
 			DisplayName = "C++ Documentation: Spare: Description";
 
 			BackgroundCustomizable = false;
@@ -932,7 +969,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Throw_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Throw_Mark(){
+		public Format_Comment_Triple_Throw_Mark()
+		{
 			DisplayName = "C++ Documentation: Throw";
 
 			BackgroundCustomizable = false;
@@ -951,7 +989,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Throw_Desc
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Throw_Desc(){
+		public Format_Comment_Triple_Throw_Desc()
+		{
 			DisplayName = "C++ Documentation: Throw: Description";
 
 			BackgroundCustomizable = false;
@@ -973,7 +1012,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Param_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Param_Mark(){
+		public Format_Comment_Triple_Param_Mark()
+		{
 			DisplayName = "C++ Documentation: Parameter";
 
 			BackgroundCustomizable = false;
@@ -992,7 +1032,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Param_Name
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Param_Name(){
+		public Format_Comment_Triple_Param_Name()
+		{
 			DisplayName = "C++ Documentation: Parameter: Name";
 
 			BackgroundCustomizable = false;
@@ -1011,7 +1052,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_Param_Desc
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_Param_Desc(){
+		public Format_Comment_Triple_Param_Desc()
+		{
 			DisplayName = "C++ Documentation: Parameter: Description";
 
 			BackgroundCustomizable = false;
@@ -1033,7 +1075,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_TParam_Mark
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_TParam_Mark(){
+		public Format_Comment_Triple_TParam_Mark()
+		{
 			DisplayName = "C++ Documentation: Template Parameter";
 
 			BackgroundCustomizable = false;
@@ -1052,7 +1095,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_TParam_Name
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_TParam_Name(){
+		public Format_Comment_Triple_TParam_Name()
+		{
 			DisplayName = "C++ Documentation: Template Parameter: Name";
 
 			BackgroundCustomizable = false;
@@ -1071,7 +1115,8 @@ namespace Color.Comment
 	internal sealed class Format_Comment_Triple_TParam_Desc
 		: ClassificationFormatDefinition
 	{
-		public Format_Comment_Triple_TParam_Desc(){
+		public Format_Comment_Triple_TParam_Desc()
+		{
 			DisplayName = "C++ Documentation: Template Parameter: Description";
 
 			BackgroundCustomizable = false;
