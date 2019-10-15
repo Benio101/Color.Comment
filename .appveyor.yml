@@ -19,4 +19,4 @@ for:
     - master
   
   image:
-  - Visual Studio 2019 Preview
+  - Visual Studio 2019
