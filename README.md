@@ -235,5 +235,5 @@ Full list of customizable Comment entries, with their default colors:
 ## Older versions
 ### 2017
 - Branch: [`2017`](https://github.com/Benio101/Color.Comment/tree/2017)
-- Release: [`0.1+2017`](https://github.com/Benio101/Color.Comment/releases/tag/0.1%2B2017)
-- Download: [`Color.Comment.vsix`](https://github.com/Benio101/Color.Comment/releases/download/0.1%2B2017/Color.Comment.vsix)
+- Release: [`0.1.0.1+2017`](https://github.com/Benio101/Color.Comment/releases/tag/0.1.0.1%2B2017)
+- Download: [`Color.Comment.vsix`](https://github.com/Benio101/Color.Comment/releases/download/0.1.0.1%2B2017/Color.Comment.vsix)
