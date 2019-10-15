@@ -111,10 +111,10 @@
       <Version>16.2.45</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Threading">
-      <Version>16.4.16</Version>
+      <Version>16.3.59</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers">
-      <Version>16.4.16</Version>
+      <Version>16.3.59</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Validation">
       <Version>15.5.31</Version>
