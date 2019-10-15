@@ -102,7 +102,7 @@
       <Version>16.3.14</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Shell.15.0">
-      <Version>16.3.29318.209</Version>
+      <Version>16.2.29122.156</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Text.UI">
       <Version>16.2.45</Version>
