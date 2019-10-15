@@ -230,3 +230,8 @@ Full list of customizable Comment entries, with their default colors:
 | C++ Documentation: Template Parameter              | Comment       | Gray            | 128, 128, 128 |
 | C++ Documentation: Template Parameter: Name        | TParam        | Purple          | 176, 128, 224 |
 | C++ Documentation: Template Parameter: Description | Plain         | Dark White      | 176, 176, 176 |
+
+## Newer versions
+### 2019
+- Branch: [`master`](https://github.com/Benio101/Color.Comment/tree/master)
+- Marketplace: [`Color.Comment`](https://marketplace.visualstudio.com/items?itemName=Benio.ColorComment2019)
