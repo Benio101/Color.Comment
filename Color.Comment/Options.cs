@@ -106,7 +106,7 @@ namespace Color.Comment
 
 		[
 			Category    ("Color.Comment"),
-			DisplayName ("​​​​​Color parameter references"),
+			DisplayName ("​​​​​​​​Color parameter references"),
 			Description ("Color parameter references in comments (prefixed by `$`)."),
 
 			TypeConverter(typeof(Option_ReferenceType_Converter))
@@ -116,7 +116,7 @@ namespace Color.Comment
 
 		[
 			Category    ("Color.Comment"),
-			DisplayName ("​​​​Color template parameter references"),
+			DisplayName ("​​​​​​​Color template parameter references"),
 			Description ("Color template parameter references in comments (prefixed by `^`)."),
 
 			TypeConverter(typeof(Option_ReferenceType_Converter))
@@ -126,7 +126,7 @@ namespace Color.Comment
 
 		[
 			Category    ("Color.Comment"),
-			DisplayName ("​​​Color member references"),
+			DisplayName ("​​​​​Color member references"),
 			Description ("Color non static member references in comments (prefixed by `.`)."),
 
 			TypeConverter(typeof(Option_ReferenceType_Converter))
@@ -136,7 +136,7 @@ namespace Color.Comment
 
 		[
 			Category    ("Color.Comment"),
-			DisplayName ("​​Color static references"),
+			DisplayName ("​​​​​Color static references"),
 			Description ("Color static references in comments (prefixed by `!`)."),
 
 			TypeConverter(typeof(Option_ReferenceType_Converter))
@@ -146,7 +146,7 @@ namespace Color.Comment
 
 		[
 			Category    ("Color.Comment"),
-			DisplayName ("​Color local references"),
+			DisplayName ("​​​​Color local references"),
 			Description ("Color local references in comments (prefixed by `@`)."),
 
 			TypeConverter(typeof(Option_ReferenceType_Converter))
@@ -156,7 +156,7 @@ namespace Color.Comment
 
 		[
 			Category    ("Color.Comment"),
-			DisplayName ("Color macro references"),
+			DisplayName ("​​​Color macro references"),
 			Description ("Color macro references in comments (prefixed by `%`)."),
 
 			TypeConverter(typeof(Option_ReferenceType_Converter))
@@ -166,7 +166,7 @@ namespace Color.Comment
 
 		[
 			Category    ("Color.Comment"),
-			DisplayName ("Color line–wide quotes"),
+			DisplayName ("​​Color line–wide quotes"),
 			Description ("Color quotes in comments (prefixed by `>`)."),
 
 			TypeConverter(typeof(Option_ReferenceType_Converter))
@@ -176,7 +176,7 @@ namespace Color.Comment
 
 		[
 			Category    ("Color.Comment"),
-			DisplayName ("Color line–wide code"),
+			DisplayName ("​Color line–wide code"),
 			Description ("Color line–wide code in comments (prefixed by `//`)."),
 
 			TypeConverter(typeof(Option_ReferenceType_Converter))
