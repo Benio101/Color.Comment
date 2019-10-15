@@ -2,10 +2,10 @@
 [Visual Studio](https://visualstudio.microsoft.com) extension: Color C++ Comments.
 
 ## Status
-| Branch | Build Status
-| ---   | ---
+| Branch   | Build Status
+| ---      | ---
 | `master` | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/master?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/master)
-| `2017` | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/2017?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/2017)
+| `2017`   | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/2017?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/2017)
 
 ## Description
 Extension adds options to overwrite colors of certain C++ Comments.<br>
@@ -25,8 +25,8 @@ Each will begin with either `C++ Comments:` xor  `C++ Documentation:` prefix.
 | ![](https://raw.githubusercontent.com/Benio101/Color.Comment/master/Color.Comment/PreviewDisabled.png) | ![](https://raw.githubusercontent.com/Benio101/Color.Comment/master/Color.Comment/PreviewEnabled.png)
 
 ## Options
-New entries will appear in `Tools` → `Options` → `Color.Comment`. Each corresponds to different feauture.<br>
-Options allows to disable, enable xor conditionally enable related feautures (coloring blocks of comments).
+New entries will appear in `Tools` → `Options` → `Color.Comment`. Each corresponds to different feature.<br>
+Options allows to disable, enable xor conditionally enable related features (coloring blocks of comments).
 
 ![](https://raw.githubusercontent.com/Benio101/Color.Comment/master/Color.Comment/Options.png)
 
@@ -35,24 +35,24 @@ Full list of option states:
 
 | Enum     | State                                  | Meaning                                                                  |
 | :---     | :---                                   | :---                                                                     |
-| `No`     | No                                     | Disable feauture (don't overwrite color of it's occurencies)             |
-| `All`    | Yes, in all comments                   | Enable feauture (overwrite color of it's occurencies)                    |
+| `No`     | No                                     | Disable feature (don't overwrite color of it's occurencies)              |
+| `All`    | Yes, in all comments                   | Enable feature (overwrite color of it's occurencies)                     |
 | `Triple` | Yes, but in triple slash comments only | _As above_, but only in triple slash comments _(that begins with `///`)_ |
 
 ### Details
-Full list of options:
+Full list of options (Default state: `Triple`: Yes, but in triple slash comments only):
 
-| Option                              | Default state                                    |
-| :---                                | :---                                             |
-| Color parameter references          | `All`: Yes, in all comments                      |
-| Color template parameter references | `All`: Yes, in all comments                      |
-| Color member references             | `All`: Yes, in all comments                      |
-| Color static references             | `All`: Yes, in all comments                      |
-| Color local references              | `All`: Yes, in all comments                      |
-| Color macro references              | `All`: Yes, in all comments                      |
-| Color line–wide quotes              | `Triple`: Yes, but in triple slash comments only |
-| Color line–wide code                | `Triple`: Yes, but in triple slash comments only |
-| Color inline code                   | `All`: Yes, in all comments                      |
+| Option                              | Details                                        |
+| :---                                | :---                                           |
+| Color parameter references          | Prefixed by `$`                                |
+| Color template parameter references | Prefixed by `^`                                |
+| Color member references             | Prefixed by `.`                                |
+| Color static references             | Prefixed by `!`                                |
+| Color local references              | Prefixed by `@`                                |
+| Color macro references              | Prefixed by `%`                                |
+| Color line–wide quotes              | Prefixed by `>`                                |
+| Color line–wide code                | Prefixed by `//`                               |
+| Color inline code                   | Surrounded by U+0060 ``​`​`` GRAVE ACCENT symbol |
 
 ### Note
 Note that editing options does not take immediate effect to keep performance.<br>
@@ -95,7 +95,7 @@ void Close();
 ```
 
 - `Connection.Close();` is a code and will be colored as `C++ Comment: Code`.
-- `Connection.Close();` is a code mark and will be colored as `C++ Comment: Code: "//"`.
+- `//` is a code mark and will be colored as `C++ Comment: Code: "//"`.
 
 ### Inline Code
 Inline Codes are blocks of comments surrounded by Grave Accent (U+0060 ``​`​``) symbol.
@@ -111,7 +111,7 @@ void Begin();
 ```
 
 - `10.0.0.2` is an inline code and will be colored as `C++ Comment: Inline Code`.
-- ``​`​`` is an inline code mark and will be colored as ``C++ Comment: Inline Code: "`"``.
+- Both ``​`​`` are an inline code marks and will be colored as ``C++ Comment: Inline Code: "`"``.
 
 ### References
 References are inline mentions of entities (functions, variables _etc._) in comments.<br>
@@ -132,20 +132,20 @@ Options that enables references are:
 /// Cache with absolute value of .Result
 unsigned int Cache_AbsResult = 0;
 ```
-- `.Result` is a reference to `Result` member and will be colored as `C++ Comment: Reference: Member`.
-- `.` is a member reference mark member and will be colored as `C++ Comment: Reference: Member: "."`.
+- `.Result` is a reference to `Result` member. `Result` will be colored as `C++ Comment: Reference: Member`.
+- `.` is a member reference mark and will be colored as `C++ Comment: Reference: Member: "."`.
 
 #### Details
 Full list of references:
   
-| Reference          | Prefix   |
-| :---               | :---     |
-| Parameter          | `$`      |
-| Template Parameter | `^`      |
-| Member             | `.`      |
-| Static             | `!`      |
-| Local              | `.`      |
-| Macro              | `%`      |
+| Reference          | Prefix |
+| :---               | :---   |
+| Parameter          | `$`    |
+| Template Parameter | `^`    |
+| Member             | `.`    |
+| Static             | `!`    |
+| Local              | `@`    |
+| Macro              | `%`    |
 
 ### Headers
 Headers are line–wide documentation commands for tools like Doxygen or Standardese.<br>
@@ -235,5 +235,5 @@ Full list of customizable Comment entries, with their default colors:
 ## Older versions
 ### 2017
 - Branch: [`2017`](https://github.com/Benio101/Color.Comment/tree/2017)
-- Release: [`0.0.2+2017`](https://github.com/Benio101/Color.Comment/releases/tag/0.0.2%2B2017)
-- Download: [`Color.Comment.vsix`](https://github.com/Benio101/Color.Comment/releases/download/0.0.2%2B2017/Color.Comment.vsix)
+- Release: [`0.1+2017`](https://github.com/Benio101/Color.Comment/releases/tag/0.1%2B2017)
+- Download: [`Color.Comment.vsix`](https://github.com/Benio101/Color.Comment/releases/download/0.1%2B2017/Color.Comment.vsix)
