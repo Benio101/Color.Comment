@@ -806,6 +806,9 @@ namespace Color.Comment
 				{
 					var MarkIndex = CommentMatch.Groups["Mark"].Index;
 
+					// Fix #4.
+					if (MarkIndex == 0) continue;
+
 					foreach (var (Min, Max) in InlineCodePositions)
 						if (MarkIndex >= Min && MarkIndex <= Max)
 							goto SkipLocalRef;
