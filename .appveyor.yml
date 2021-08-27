@@ -16,7 +16,15 @@ for:
 -
   branches:
     only:
-    - master
+    - 2019
   
   image:
   - Visual Studio 2019
+
+-
+  branches:
+    only:
+    - 2022
+  
+  image:
+  - Visual Studio 2022
