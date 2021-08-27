@@ -4,7 +4,8 @@
 ## Status
 | Branch | Build Status
 | ---    | ---
-| [`master`](https://github.com/Benio101/Color.Comment/tree/master) | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/master?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/master)
+| [`2022`](https://github.com/Benio101/Color.Comment/tree/2022) | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/2022?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/2022)
+| [`2019`](https://github.com/Benio101/Color.Comment/tree/2019) | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/2019?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/2019)
 | [`2017`](https://github.com/Benio101/Color.Comment/tree/2017) | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/2017?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/2017)
 
 ## Description
@@ -238,3 +239,8 @@ Full list of customizable Comment entries, with their default colors:
 - Release: [`0.1.0.1+2017`](https://github.com/Benio101/Color.Comment/releases/tag/0.1.0.1%2B2017)
 - Download: [`Color.Comment.vsix`](https://github.com/Benio101/Color.Comment/releases/download/0.1.0.1%2B2017/Color.Comment.vsix)
 - Marketplace: [`Color.Comment (2017)`](https://marketplace.visualstudio.com/items?itemName=Benio.ColorComment)
+
+## Newer versions
+### 2022
+- Branch: [`2022`](https://github.com/Benio101/Color.Comment/tree/2022)
+- Marketplace: [`Color.Comment (2022)`](https://marketplace.visualstudio.com/items?itemName=Benio.ColorComment2022)
