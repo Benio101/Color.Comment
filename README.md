@@ -188,9 +188,9 @@ Full list of customizable Comment entries, with their default colors:
 | C++ Comment                                        | Comment       | Gray            | 128, 128, 128 |
 | C++ Comment: "//"                                  | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Parameter: "$"             | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
-| C++ Comment: Reference: Parameter                  | Param         | Orange          | 224, 176, 128 |
+| C++ Comment: Reference: Parameter                  | Param         | Cyan            | 176, 224, 224 |
 | C++ Comment: Reference: Template Parameter: "^"    | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
-| C++ Comment: Reference: Template Parameter         | TParam        | Purple          | 176, 128, 224 |
+| C++ Comment: Reference: Template Parameter         | TParam        | Green           | 176, 224, 128 |
 | C++ Comment: Reference: Member: "."                | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Member                     | Member        | Yellow          | 224, 224, 128 |
 | C++ Comment: Reference: Static: "!"                | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
@@ -199,8 +199,8 @@ Full list of customizable Comment entries, with their default colors:
 | C++ Comment: Reference: Local                      | Local         | White           | 224, 224, 224 |
 | C++ Comment: Reference: Macro: "%"                 | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Macro                      | Macro         | Purple          | 176, 128, 224 |
-| C++ Comment: Quote: ">"                            | Dark String   | Very Dark Green | ​ 80, ​ 96, ​ 64 |
-| C++ Comment: Quote                                 | String        | Dark Green      | 128, 176, ​ 96 |
+| C++ Comment: Quote: ">"                            | Dark String   | Dark Red        | 176, ​ 80, ​ 80 |
+| C++ Comment: Quote                                 | String        | Red             | 224, 128, 128 |
 | C++ Comment: Code: "//"                            | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Code                                  | Comment       | Gray            | 128, 128, 128 |
 | C++ Comment: Inline Code: "\`"                     | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
@@ -219,17 +219,17 @@ Full list of customizable Comment entries, with their default colors:
 | C++ Documentation: See: Description                | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: Bug                             | Effect        | Dark Red        | 224, ​ 96, ​ 96 |
 | C++ Documentation: Bug: Description                | Plain         | Dark White      | 176, 176, 176 |
-| C++ Documentation: Return                          | Return        | Dark Blue       | ​ 96, 128, 224 |
+| C++ Documentation: Return                          | Return        | Violet          | 128, 128, 224 |
 | C++ Documentation: Return: Description             | Plain         | Dark White      | 176, 176, 176 |
-| C++ Documentation: Spare                           | Spare         | Green           | 176, 224, 128 |
+| C++ Documentation: Spare                           | Spare         | Lime            | 176, 224, 128 |
 | C++ Documentation: Spare: Description              | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: Throw                           | Throw         | Red             | 224, 128, 128 |
 | C++ Documentation: Throw: Description              | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: Parameter                       | Comment       | Gray            | 128, 128, 128 |
-| C++ Documentation: Parameter: Name                 | Param         | Orange          | 224, 176, 128 |
+| C++ Documentation: Parameter: Name                 | Param         | Cyan            | 176, 224, 224 |
 | C++ Documentation: Parameter: Description          | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: Template Parameter              | Comment       | Gray            | 128, 128, 128 |
-| C++ Documentation: Template Parameter: Name        | TParam        | Purple          | 176, 128, 224 |
+| C++ Documentation: Template Parameter: Name        | TParam        | Green           | 176, 224, 128 |
 | C++ Documentation: Template Parameter: Description | Plain         | Dark White      | 176, 176, 176 |
 
 ## Older versions
