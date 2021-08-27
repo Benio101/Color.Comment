@@ -4,7 +4,8 @@
 ## Status
 | Branch | Build Status
 | ---    | ---
-| [`master`](https://github.com/Benio101/Color.Comment/tree/master) | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/master?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/master)
+| [`2022`](https://github.com/Benio101/Color.Comment/tree/2022) | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/2022?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/2022)
+| [`2019`](https://github.com/Benio101/Color.Comment/tree/2019) | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/2019?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/2019)
 | [`2017`](https://github.com/Benio101/Color.Comment/tree/2017) | [![Build status](https://ci.appveyor.com/api/projects/status/ye6htg4leuapsaxq/branch/2017?svg=true)](https://ci.appveyor.com/project/Benio101/color-comment/branch/2017)
 
 ## Description
@@ -188,9 +189,9 @@ Full list of customizable Comment entries, with their default colors:
 | C++ Comment                                        | Comment       | Gray            | 128, 128, 128 |
 | C++ Comment: "//"                                  | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Parameter: "$"             | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
-| C++ Comment: Reference: Parameter                  | Param         | Orange          | 224, 176, 128 |
+| C++ Comment: Reference: Parameter                  | Param         | Cyan            | 176, 224, 224 |
 | C++ Comment: Reference: Template Parameter: "^"    | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
-| C++ Comment: Reference: Template Parameter         | TParam        | Purple          | 176, 128, 224 |
+| C++ Comment: Reference: Template Parameter         | TParam        | Green           | 176, 224, 128 |
 | C++ Comment: Reference: Member: "."                | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Member                     | Member        | Yellow          | 224, 224, 128 |
 | C++ Comment: Reference: Static: "!"                | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
@@ -199,8 +200,8 @@ Full list of customizable Comment entries, with their default colors:
 | C++ Comment: Reference: Local                      | Local         | White           | 224, 224, 224 |
 | C++ Comment: Reference: Macro: "%"                 | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Reference: Macro                      | Macro         | Purple          | 176, 128, 224 |
-| C++ Comment: Quote: ">"                            | Dark String   | Very Dark Green | ​ 80, ​ 96, ​ 64 |
-| C++ Comment: Quote                                 | String        | Dark Green      | 128, 176, ​ 96 |
+| C++ Comment: Quote: ">"                            | Dark String   | Dark Red        | 176, ​ 80, ​ 80 |
+| C++ Comment: Quote                                 | String        | Red             | 224, 128, 128 |
 | C++ Comment: Code: "//"                            | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
 | C++ Comment: Code                                  | Comment       | Gray            | 128, 128, 128 |
 | C++ Comment: Inline Code: "\`"                     | Comment Punct | Dark Gray       | ​ 80, ​ 80, ​ 80 |
@@ -219,20 +220,25 @@ Full list of customizable Comment entries, with their default colors:
 | C++ Documentation: See: Description                | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: Bug                             | Effect        | Dark Red        | 224, ​ 96, ​ 96 |
 | C++ Documentation: Bug: Description                | Plain         | Dark White      | 176, 176, 176 |
-| C++ Documentation: Return                          | Return        | Dark Blue       | ​ 96, 128, 224 |
+| C++ Documentation: Return                          | Return        | Violet          | 128, 128, 224 |
 | C++ Documentation: Return: Description             | Plain         | Dark White      | 176, 176, 176 |
-| C++ Documentation: Spare                           | Spare         | Green           | 176, 224, 128 |
+| C++ Documentation: Spare                           | Spare         | Lime            | 176, 224, 128 |
 | C++ Documentation: Spare: Description              | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: Throw                           | Throw         | Red             | 224, 128, 128 |
 | C++ Documentation: Throw: Description              | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: Parameter                       | Comment       | Gray            | 128, 128, 128 |
-| C++ Documentation: Parameter: Name                 | Param         | Orange          | 224, 176, 128 |
+| C++ Documentation: Parameter: Name                 | Param         | Cyan            | 176, 224, 224 |
 | C++ Documentation: Parameter: Description          | Plain         | Dark White      | 176, 176, 176 |
 | C++ Documentation: Template Parameter              | Comment       | Gray            | 128, 128, 128 |
-| C++ Documentation: Template Parameter: Name        | TParam        | Purple          | 176, 128, 224 |
+| C++ Documentation: Template Parameter: Name        | TParam        | Green           | 176, 224, 128 |
 | C++ Documentation: Template Parameter: Description | Plain         | Dark White      | 176, 176, 176 |
 
 ## Older versions
+### 2019
+- Branch: [`2019`](https://github.com/Benio101/Color.Comment/tree/2019)
+- Release: [`0.1.2.1+2019`](https://github.com/Benio101/Color.Comment/releases/tag/0.1.2.1%2B2019)
+- Download: [`Color.Comment.vsix`](https://github.com/Benio101/Color.Comment/releases/download/0.1.2.1%2B2019/Color.Comment.vsix)
+- Marketplace: [`Color.Comment (2019)`](https://marketplace.visualstudio.com/items?itemName=Benio.ColorComment2019)
 ### 2017
 - Branch: [`2017`](https://github.com/Benio101/Color.Comment/tree/2017)
 - Release: [`0.1.0.1+2017`](https://github.com/Benio101/Color.Comment/releases/tag/0.1.0.1%2B2017)
